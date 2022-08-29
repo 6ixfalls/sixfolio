@@ -1,5 +1,5 @@
 <template>
-  <div ref="root" @mousemove="mouseMove">
+  <div ref="root" @mousemove="mouseMove" @mousewheel="mouseWheel">
     <router-view class="hidden" />
     <div
       id="intro"
@@ -31,6 +31,7 @@
 <script>
 import { defineComponent } from "vue";
 import anime from "animejs";
+import normalizeWheel from "normalize-wheel";
 
 const range = 18;
 
@@ -72,6 +73,10 @@ export default defineComponent({
 
       const container = this.$refs.root.querySelector("#container");
       container.style.transform = `translateX(${xValue}px) translateY(${yValue}px)`;
+    },
+    mouseWheel: function (event) {
+      const { pixelY } = normalizeWheel(event);
+      console.log(pixelY);
     },
   },
 });
