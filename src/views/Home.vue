@@ -1,5 +1,5 @@
 <template>
-  <main v-html="markdown"></main>
+  <main class="text-slate-200" v-html="markdown"></main>
 </template>
 <script>
 import { defineComponent } from "vue";

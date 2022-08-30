@@ -47,7 +47,6 @@ export default defineComponent({
   data() {
     return {
       onIntro: true,
-      hasProcessed: false,
     };
   },
   mounted() {
@@ -91,11 +90,12 @@ export default defineComponent({
     console.log(content);
     scrollAnimation.add({
       begin: (anim) => {
-        console.log(anim.direction);
+        intro.classList.add("hidden");
         content.classList.remove("hidden");
       },
       targets: content,
       opacity: [0, 1],
+      translateY: [100, 0],
       easing: "easeInOutQuad",
       duration: 500,
     });
@@ -127,32 +127,11 @@ export default defineComponent({
       }
     },
     onPageSwitch(delta) {
-      if (this.$data.hasProcessed) return;
-      this.$data.hasProcessed = true;
-      nextTick(() => {
-        this.$data.hasProcessed = false;
-      });
-
       const direction = Math.sign(delta);
 
-      switch (direction) {
-        case 1:
-          this.$data.onIntro = false;
-          this.$data.scrollAnimation.direction = "normal";
-          this.$data.scrollAnimation.play();
-          break;
-        case -1:
-          if (this.$data.onIntro) break;
-
-          this.$data.onIntro = true;
-          this.$router.push("/");
-          this.$data.scrollAnimation.began =
-            this.$data.scrollAnimation.completed = false;
-          this.$data.scrollAnimation.loop =
-            this.$data.scrollAnimation.progress = 0;
-          this.$data.scrollAnimation.reverse();
-          this.$data.scrollAnimation.play();
-          break;
+      if (this.$data.onIntro && direction === 1) {
+        this.$data.onIntro = false;
+        this.$data.scrollAnimation.play();
       }
     },
   },
