@@ -16,11 +16,16 @@ module.exports = {
         star1: {
           '0%, 100%': { 'opacity': 0.6 },
           '50%': { 'opacity': 0 },
-        }
+        },
+        moon: {
+          '0%, 100%': { 'opacity': 0.6, 'transform': 'rotate(5deg);' },
+          '50%': { 'opacity': 0.5, 'transform': 'rotate(-5deg);' },
+        },
       },
       animation: {
         star1: 'star1 var(--star-flicker-start) ease-in-out infinite',
         star2: 'star1 var(--star-flicker-start) ease-in-out infinite',
+        moon: 'moon 5s ease-in-out infinite',
       }
     },
     fontFamily: {

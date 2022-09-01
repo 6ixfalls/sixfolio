@@ -18,25 +18,33 @@
         text-white
       "
     >
+      <div ref="moon" class="absolute w-32 top-[10%] right-[10%]">
+        <img src="/img/mooncresc.png" class="opacity-60 animate-moon" />
+      </div>
       <div
-        v-for="n in 100"
-        :key="n"
-        class="
-          absolute
-          opacity-60
-          bg-white
-          shadow shadow-white
-          w-0.5
-          h-0.5
-          rounded
-        "
-        :class="{ 'animate-star1': n % 2 === 0, 'animate-star2': n % 2 === 1 }"
-        :style="{
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          'animation-delay': `${Math.random()}s`,
-        }"
-      ></div>
+        ref="starcontainer"
+        class="fixed w-screen h-screen flex items-center justify-center"
+      >
+        <div
+          v-for="n in Math.floor(windowWidth / 10)"
+          :key="n"
+          class="absolute opacity-60 bg-white shadow shadow-white rounded"
+          :class="{
+            'animate-star1': n % 2 === 0,
+            'animate-star2': n % 2 === 1,
+            'w-0.5': n % 4 !== 3,
+            'w-1': n % 4 === 3,
+            'h-0.5': n % 4 !== 3,
+            'h-1': n % 4 === 3,
+          }"
+          :style="{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            'animation-delay': `${Math.random()}s`,
+          }"
+        />
+      </div>
+
       <div
         ref="container"
         class="flex flex-col w-2/3 h-1/3 perspective-[1800px]"
@@ -67,6 +75,7 @@ export default defineComponent({
   data() {
     return {
       onIntro: true,
+      windowWidth: window.innerWidth,
     };
   },
   mounted() {
@@ -136,6 +145,14 @@ export default defineComponent({
 
       const container = this.$refs.container;
       container.style.transform = `translateX(${xValue}px) translateY(${yValue}px)`;
+      const container2 = this.$refs.starcontainer;
+      container2.style.transform = `translateX(${xValue * 0.3}px) translateY(${
+        yValue * 0.3
+      }px)`;
+      const moon = this.$refs.moon;
+      moon.style.transform = `translateX(${xValue * 0.8}px) translateY(${
+        yValue * 0.8
+      }px)`;
     },
     mouseWheel(event) {
       const { pixelY } = normalizeWheel(event);
