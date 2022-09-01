@@ -19,6 +19,25 @@
       "
     >
       <div
+        v-for="n in 100"
+        :key="n"
+        class="
+          absolute
+          opacity-60
+          bg-white
+          shadow shadow-white
+          w-0.5
+          h-0.5
+          rounded
+        "
+        :class="{ 'animate-star1': n % 2 === 0, 'animate-star2': n % 2 === 1 }"
+        :style="{
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          'animation-delay': `${Math.random()}s`,
+        }"
+      ></div>
+      <div
         ref="container"
         class="flex flex-col w-2/3 h-1/3 perspective-[1800px]"
       >
@@ -38,6 +57,7 @@ import { defineComponent, nextTick } from "vue";
 import anime from "animejs";
 import normalizeWheel from "normalize-wheel";
 import Hammer from "hammerjs";
+import { Icon } from "@iconify/vue";
 
 const range = 18;
 
@@ -134,6 +154,9 @@ export default defineComponent({
         this.$data.scrollAnimation.play();
       }
     },
+  },
+  components: {
+    Icon,
   },
 });
 </script>

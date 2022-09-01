@@ -26,6 +26,10 @@
     }
 }
 
+:root {
+    --star-flicker-start: 1s;
+}
+
 h1 {
     @apply text-2xl;
 }

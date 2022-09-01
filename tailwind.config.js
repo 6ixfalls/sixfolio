@@ -12,6 +12,16 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      keyframes: {
+        star1: {
+          '0%, 100%': { 'opacity': 0.6 },
+          '50%': { 'opacity': 0 },
+        }
+      },
+      animation: {
+        star1: 'star1 var(--star-flicker-start) ease-in-out infinite',
+        star2: 'star1 var(--star-flicker-start) ease-in-out infinite',
+      }
     },
     fontFamily: {
       text: ['Karla', ...defaultTheme.fontFamily.sans],
