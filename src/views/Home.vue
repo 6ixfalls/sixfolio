@@ -1,5 +1,6 @@
 <template>
   <div
+    id="textcontainer"
     class="text-slate-200 m-6 break-words overflow-x-hidden"
     v-html="markdown"
   ></div>
@@ -13,7 +14,7 @@ export default defineComponent({
   computed: {
     markdown() {
       const markdown = marked(
-        `Markdown Quick Reference (ABOUT)
+        `Markdown Quick Reference
 ========================
 
 This guide is a very brief overview, with examples, of the syntax that [Markdown] supports. It is itself written in Markdown and you can copy the samples over to the left-hand pane for experimentation. It's shown as *text* and not *rendered HTML*.
@@ -190,6 +191,18 @@ It is a pity, but markdown does **not** work in here for most markdown parsers.
       );
       return dompurify.sanitize(markdown);
     },
+  },
+  mounted() {
+    document.querySelectorAll("#textcontainer a").forEach((a) => {
+      a.addEventListener("click", (e) => {
+        const href = a.attributes.href.value;
+
+        if (!(href.startsWith("http://") || href.startsWith("https://"))) {
+          e.preventDefault();
+          this.$router.push({ path: a.attributes.href.value });
+        }
+      });
+    });
   },
 });
 </script>
