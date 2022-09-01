@@ -27,6 +27,7 @@
 }
 
 :root {
+    color-scheme: dark;
     --star-flicker-start: 1s;
 }
 

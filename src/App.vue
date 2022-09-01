@@ -3,7 +3,14 @@
     ref="root"
     @mousemove="mouseMove"
     @mousewheel="mouseWheel"
-    class="w-screen h-screen"
+    class="
+      h-screen
+      absolute
+      scrollbar
+      scrollbar-thumb-neutral-800
+      scrollbar-thumb-rounded-lg
+      scrollbar-track-transparent
+    "
   >
     <div ref="content" class="hidden"><router-view /></div>
     <div
@@ -16,6 +23,7 @@
         items-center
         justify-center
         text-white
+        select-none
       "
     >
       <div ref="moon" class="absolute w-32 top-[10%] right-[10%]">
@@ -56,6 +64,47 @@
           >Self-taught, game and software developer.</span
         >
       </div>
+
+      <!--<div
+        ref="scroll"
+        class="
+          absolute
+          w-5
+          h-8
+          rounded-full
+          border-neutral-400 border-2
+          bottom-12
+          flex
+          items-center
+          justify-center
+        "
+      >
+        <div
+          class="
+            absolute
+            w-1
+            h-2
+            rounded-full
+            bg-neutral-400
+            top-0
+            animate-scrollwheel
+          "
+        />
+      </div>-->
+      <div
+        ref="scroll"
+        class="
+          absolute
+          bottom-12
+          animate-bounce
+          drop-shadow-[0_1px_2px_rgb(150_150_150)]
+        "
+      >
+        <Icon
+          icon="akar-icons:chevron-down"
+          class="text-neutral-300 icon-2xl"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -79,6 +128,8 @@ export default defineComponent({
     };
   },
   mounted() {
+    delete Hammer.defaults.cssProps.userSelect;
+
     const intro = this.$refs.intro;
     const content = this.$refs.content;
     const introName = this.$refs.name;
@@ -96,6 +147,11 @@ export default defineComponent({
     const introAnimation = anime.timeline();
 
     introAnimation.add({
+      targets: this.$refs.moon,
+      translateY: [-500, 0],
+      duration: 1400,
+    });
+    introAnimation.add({
       targets: introName.querySelectorAll("span"),
       delay: anime.stagger(50),
       opacity: [0, 1],
@@ -107,27 +163,37 @@ export default defineComponent({
       opacity: [0, 1],
       color: "#ddd",
     });
+    introAnimation.add({
+      targets: this.$refs.scroll,
+      opacity: [0, 1],
+      duration: 1500,
+    });
 
     const scrollAnimation = anime.timeline({ autoplay: false });
 
     scrollAnimation.add({
+      complete: () => {
+        intro.classList.add("hidden");
+      },
       targets: intro,
-      translateY: -window.innerHeight,
+      top: -window.innerHeight,
       easing: "easeInOutQuad",
       duration: 1000,
     });
     console.log(content);
-    scrollAnimation.add({
-      begin: (anim) => {
-        intro.classList.add("hidden");
-        content.classList.remove("hidden");
+    scrollAnimation.add(
+      {
+        begin: () => {
+          content.classList.remove("hidden");
+        },
+        targets: content,
+        opacity: [0, 1],
+        translateY: [100, 0],
+        easing: "easeOutQuad",
+        duration: 500,
       },
-      targets: content,
-      opacity: [0, 1],
-      translateY: [100, 0],
-      easing: "easeInOutQuad",
-      duration: 500,
-    });
+      "-=100"
+    );
 
     this.$data.scrollAnimation = scrollAnimation;
 
@@ -150,8 +216,12 @@ export default defineComponent({
         yValue * 0.3
       }px)`;
       const moon = this.$refs.moon;
-      moon.style.transform = `translateX(${xValue * 0.8}px) translateY(${
-        yValue * 0.8
+      moon.style.transform = `translateX(${xValue * 0.6}px) translateY(${
+        yValue * 0.6
+      }px)`;
+      const scroll = this.$refs.scroll;
+      scroll.style.transform = `translateX(${xValue * 0.7}px) translateY(${
+        yValue * 0.7
       }px)`;
     },
     mouseWheel(event) {

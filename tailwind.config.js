@@ -21,11 +21,17 @@ module.exports = {
           '0%, 100%': { 'opacity': 0.6, 'transform': 'rotate(5deg);' },
           '50%': { 'opacity': 0.5, 'transform': 'rotate(-5deg);' },
         },
+        scrollwheel: {
+          '0%': { 'opacity': 0, 'top': '15%' },
+          '10%': { 'opacity': 1 },
+          '100%': { 'opacity': 0, 'top': '50%' },
+        },
       },
       animation: {
         star1: 'star1 var(--star-flicker-start) ease-in-out infinite',
         star2: 'star1 var(--star-flicker-start) ease-in-out infinite',
         moon: 'moon 5s ease-in-out infinite',
+        scrollwheel: 'scrollwheel 1s ease-in-out infinite',
       }
     },
     fontFamily: {
@@ -63,5 +69,6 @@ module.exports = {
       },
         { values: theme('width') });
     }),
-  ]
+    //require('tailwind-scrollbar'),
+  ],
 }

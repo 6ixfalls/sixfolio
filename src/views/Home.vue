@@ -1,5 +1,8 @@
 <template>
-  <main class="text-slate-200" v-html="markdown"></main>
+  <div
+    class="text-slate-200 m-6 break-words overflow-x-hidden"
+    v-html="markdown"
+  ></div>
 </template>
 <script>
 import { defineComponent } from "vue";
@@ -159,10 +162,6 @@ Horizontal Rule
 ---------------
 
 If you need a horizontal rule you just need to put at least three hyphens, asterisks, or underscores on a line by themselves. You can also even put spaces between the characters.
-
----
-****************************
-_ _ _ _ _ _ _
 
 Those three all produced horizontal lines. Keep in mind that three hyphens under any text turns that text into a heading, so add a blank like if you use hyphens.
 
