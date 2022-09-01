@@ -27,7 +27,7 @@
       "
     >
       <div ref="moon" class="absolute w-32 top-[10%] right-[10%]">
-        <img src="/img/mooncresc.png" class="opacity-60 animate-moon" />
+        <img src="/img/mooncresc.png" class="animate-moon" />
       </div>
       <div
         ref="starcontainer"
