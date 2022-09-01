@@ -25,6 +25,7 @@
         text-white
         select-none
       "
+      v-if="this.$route.path === '/'"
     >
       <div ref="moon" class="absolute w-32 top-[10%] right-[10%]">
         <img src="/img/mooncresc.png" class="animate-moon" />
@@ -106,6 +107,7 @@
         />
       </div>
     </div>
+    <div v-else>{{ onPageSwitch(1) }}</div>
   </div>
 </template>
 
@@ -180,7 +182,6 @@ export default defineComponent({
       easing: "easeInOutQuad",
       duration: 1000,
     });
-    console.log(content);
     scrollAnimation.add(
       {
         begin: () => {
@@ -210,16 +211,19 @@ export default defineComponent({
       const xValue = calcValue(x, window.innerWidth);
 
       const container = this.$refs.container;
-      container.style.transform = `translateX(${xValue}px) translateY(${yValue}px)`;
       const container2 = this.$refs.starcontainer;
+      const moon = this.$refs.moon;
+      const scroll = this.$refs.scroll;
+
+      if (!container) return;
+
+      container.style.transform = `translateX(${xValue}px) translateY(${yValue}px)`;
       container2.style.transform = `translateX(${xValue * 0.3}px) translateY(${
         yValue * 0.3
       }px)`;
-      const moon = this.$refs.moon;
       moon.style.transform = `translateX(${xValue * 0.6}px) translateY(${
         yValue * 0.6
       }px)`;
-      const scroll = this.$refs.scroll;
       scroll.style.transform = `translateX(${xValue * 0.7}px) translateY(${
         yValue * 0.7
       }px)`;
