@@ -1,7 +1,7 @@
 <template>
   <div
     id="textcontainer"
-    class="text-slate-200 m-6 break-words overflow-x-hidden"
+    class="text-slate-200 break-words overflow-x-hidden"
     v-html="markdown"
   ></div>
 </template>

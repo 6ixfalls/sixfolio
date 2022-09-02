@@ -14,14 +14,14 @@ export default defineComponent({
   computed: {
     markdown() {
       const markdown = marked(
-        `Markdown Quick Reference
+        `Projects Of The Markdown Quick Reference
 ========================
 
 This guide is a very brief overview, with examples, of the syntax that [Markdown] supports. It is itself written in Markdown and you can copy the samples over to the left-hand pane for experimentation. It's shown as *text* and not *rendered HTML*.
 
 [Markdown]: http://daringfireball.net/projects/markdown/
 
-About: [/about](/about)
+About:[/about](/about)
 
 
 Simple Text Formatting

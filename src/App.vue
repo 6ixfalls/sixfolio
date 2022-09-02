@@ -21,17 +21,44 @@
         -translate-x-1/2
         bg-[rgba(255,255,255,0.1)]
         rounded
-        backdrop-blur
+        backdrop-blur-sm
         border border-[rgba(255,255,255,0.1)]
         shadow-xl
         w-[85%]
         md:w-[40rem]
         h-12
         z-10
+        flex
+        items-center
+        justify-between
+        select-none
       "
-    ></div>
+    >
+      <router-link class="m-4 font-medium text-white fixed no-underline" to="/"
+        >sixfalls</router-link
+      >
+      <div class="m-auto">
+        <router-link
+          v-for="route in routes"
+          :key="route.path"
+          :to="route.path"
+          class="m-4 text-neutral-200 no-underline"
+          >{{ route.meta.friendly }}</router-link
+        >
+      </div>
+      <div class="absolute right-2 flex flex-row">
+        <a
+          v-for="icon in icons"
+          :key="icon.name"
+          :href="icon.url"
+          class="text-white no-underline"
+        >
+          <Icon :icon="icon.name" class="icon-lg mx-2" />
+        </a>
+      </div>
+    </div>
     <div ref="content" class="hidden">
-      <router-view />
+      <router-view class="m-8 mt-24" />
     </div>
     <div
       ref="intro"
@@ -143,10 +170,25 @@ const range = 18;
 const calcValue = (a, b) => ((a / b) * range - range / 2).toFixed(1);
 
 export default defineComponent({
+  computed: {
+    routes() {
+      return this.$router.getRoutes().filter((i) => i.meta.friendly);
+    },
+  },
   data() {
     return {
       onIntro: true,
       windowWidth: window.innerWidth,
+      icons: {
+        roblox: {
+          name: "simple-icons:roblox",
+          url: "https://www.roblox.com/users/193632792/profile",
+        },
+        discord: {
+          name: "simple-icons:discord",
+          url: "https://discord.com/users/303173495918034945",
+        },
+      },
     };
   },
   mounted() {
