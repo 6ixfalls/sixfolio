@@ -12,7 +12,27 @@
       scrollbar-track-transparent
     "
   >
-    <div ref="content" class="hidden"><router-view /></div>
+    <div
+      ref="topbar"
+      class="
+        fixed
+        top-4
+        left-1/2
+        -translate-x-1/2
+        bg-[rgba(255,255,255,0.1)]
+        rounded
+        backdrop-blur
+        border border-[rgba(255,255,255,0.1)]
+        shadow-xl
+        w-[85%]
+        md:w-[40rem]
+        h-12
+        z-10
+      "
+    ></div>
+    <div ref="content" class="hidden">
+      <router-view />
+    </div>
     <div
       ref="intro"
       class="
@@ -195,6 +215,10 @@ export default defineComponent({
       },
       "-=100"
     );
+    scrollAnimation.add({
+      targets: this.$refs.topbar,
+      top: [-96, 16],
+    });
 
     this.$data.scrollAnimation = scrollAnimation;
 
