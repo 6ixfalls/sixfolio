@@ -182,11 +182,12 @@
 </template>
 
 <script>
-import { defineComponent, nextTick } from "vue";
+import { defineComponent, defineCustomElement, nextTick } from "vue";
 import anime from "animejs";
 import normalizeWheel from "normalize-wheel";
 import Hammer from "hammerjs";
 import { Icon } from "@iconify/vue";
+import Card from "./components/Card.ce.vue";
 
 const range = 18;
 
@@ -293,6 +294,8 @@ export default defineComponent({
     });
 
     hammer.on("swipe", this.pageScroll);
+
+    customElements.define("md-card", defineCustomElement(Card)); // define markdown card component
   },
   methods: {
     mouseMove({ x, y }) {

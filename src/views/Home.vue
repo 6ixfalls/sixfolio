@@ -9,6 +9,7 @@
 import { defineComponent } from "vue";
 import { marked } from "marked";
 import dompurify from "dompurify";
+import Card from "../components/Card.ce.vue";
 
 export default defineComponent({
   computed: {
@@ -187,9 +188,11 @@ If markdown is too limiting, you can just insert your own <strike>crazy</strike>
 It is a pity, but markdown does **not** work in here for most markdown parsers.
 [Marked] handles it pretty well.
 </div>
+
+<md-card />
 `
       );
-      return dompurify.sanitize(markdown);
+      return dompurify.sanitize(markdown, { ADD_TAGS: ["md-card"] });
     },
   },
   mounted() {
