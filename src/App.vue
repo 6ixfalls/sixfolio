@@ -37,21 +37,44 @@
       <router-link class="m-4 font-medium text-white fixed no-underline" to="/"
         >sixfalls</router-link
       >
-      <div class="m-auto">
-        <router-link
+      <div class="m-auto flex flex-row h-full">
+        <div
           v-for="route in routes"
           :key="route.path"
-          :to="route.path"
-          class="m-4 text-neutral-200 no-underline"
-          >{{ route.meta.friendly }}</router-link
+          class="
+            group
+            px-4
+            h-full
+            transition-colors
+            hover:bg-[rgba(255,255,255,0.1)]
+            flex
+            justify-center
+            items-center
+          "
         >
+          <router-link
+            :to="route.path"
+            class="
+              text-neutral-100
+              no-underline
+              transition-colors
+              group-hover:text-neutral-200
+            "
+            >{{ route.meta.friendly }}</router-link
+          >
+        </div>
       </div>
       <div class="absolute right-2 flex flex-row">
         <a
           v-for="icon in icons"
           :key="icon.name"
           :href="icon.url"
-          class="text-white no-underline"
+          class="
+            text-white
+            no-underline
+            transition-colors
+            hover:text-neutral-300
+          "
         >
           <Icon :icon="icon.name" class="icon-lg mx-2" />
         </a>
