@@ -200,23 +200,26 @@ export class VueElement extends BaseClass {
         let childs = null;
         // web components without shadow DOM do not supports native slot
         // so, we create a VNode based on the content of child nodes.
-        // NB: named slots are currently not supported
         if (!this._config.shadowRoot) {
-            childs = () => {
-                const toObj = (a) => {
-                    const res = {};
-                    for (let i = 0, l = a.length; i < l; i++) {
-                        const attr = a[i];
-                        res[attr.nodeName] = attr.nodeValue;
+            childs = Object.fromEntries(
+                this._slots.map((slot) => [
+                    slot.slot?.length ? slot.slot : 'default',
+                    () => {
+                        const toObj = (a) => {
+                            const res = {}
+                            for (let i = 0, l = a.length; i < l; i++) {
+                                const attr = a[i]
+                                res[attr.nodeName] = attr.nodeValue
+                            }
+                            return res
+                        }
+
+                        const attrs = slot.attributes ? toObj(slot.attributes) : {}
+                        attrs.innerHTML = slot.innerHTML
+                        return createVNode(slot.tagName, attrs)
                     }
-                    return res;
-                };
-                return this._slots.map(n => {
-                    const attrs = n.attributes ? toObj(n.attributes) : {};
-                    attrs.innerHTML = n.innerHTML;
-                    return createVNode(n.tagName, attrs, null);
-                });
-            };
+                ])
+            )
         }
         const vnode = createVNode(this._def, extend({}, this._props), childs);
         if (!this._instance) {
