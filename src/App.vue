@@ -3,16 +3,7 @@
     ref="root"
     @mousemove="mouseMove"
     @mousewheel="mouseWheel"
-    class="
-      h-screen
-      w-screen
-      max-w-full
-      absolute
-      scrollbar
-      scrollbar-thumb-neutral-800
-      scrollbar-thumb-rounded-lg
-      scrollbar-track-transparent
-    "
+    class="h-screen w-screen max-w-full absolute"
   >
     <div
       ref="topbar"
@@ -299,11 +290,11 @@ export default defineComponent({
     this.$data.scrollAnimation = scrollAnimation;
 
     //delete Hammer.defaults.cssProps.userSelect;
-    const hammer = new Hammer(this.$refs.root, {
+    this.$data.hammer = new Hammer(this.$refs.root, {
       recognizers: [[Hammer.Swipe, { velocity: 0, distance: 20 }]],
     });
 
-    hammer.on("swipe", this.pageScroll);
+    this.$data.hammer.on("swipe", this.pageScroll);
 
     customElements.define(
       "md-card",
@@ -347,6 +338,7 @@ export default defineComponent({
 
       if (this.$data.onIntro && direction === 1) {
         this.$data.onIntro = false;
+        this.$data.hammer.get("swipe").set({ enable: false });
         this.$data.scrollAnimation.play();
       }
     },

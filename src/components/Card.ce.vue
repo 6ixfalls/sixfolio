@@ -2,7 +2,8 @@
   <div
     ref="wrapper"
     @mousemove="mouseMove"
-    @mouseleave="mouseOut"
+    @mouseover="mouseOver"
+    @mouseleave="mouseLeave"
     class="w-full h-52 lg:h-48 lg:my-0 my-4"
   >
     <div
@@ -24,6 +25,9 @@ const rotAngle = 25;
 export default {
   name: "MarkdownCard",
   methods: {
+    mouseOver() {
+      anime.remove(this.$refs.movement);
+    },
     mouseMove({ x, y, target }) {
       const { left, top, width, height } = target.getBoundingClientRect();
       const xPos = x - left;
@@ -36,8 +40,7 @@ export default {
         rotAngle
       )}deg) rotateX(${map(yPos, 0, height, rotAngle, -rotAngle)}deg)`;
     },
-    mouseOut() {
-      console.log("out");
+    mouseLeave() {
       anime({
         targets: this.$refs.movement,
         rotateX: "0deg",
