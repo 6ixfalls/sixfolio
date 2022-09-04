@@ -9,7 +9,6 @@
 import { defineComponent } from "vue";
 import { marked } from "marked";
 import dompurify from "dompurify";
-import Card from "../components/Card.ce.vue";
 
 export default defineComponent({
   computed: {
@@ -189,7 +188,7 @@ It is a pity, but markdown does **not** work in here for most markdown parsers.
 [Marked] handles it pretty well.
 </div>
 
-<md-card />
+<md-card></md-card><md-card></md-card><md-card></md-card><md-card></md-card><md-card></md-card><md-card></md-card><md-card></md-card><md-card></md-card><md-card></md-card>
 `
       );
       return dompurify.sanitize(markdown, { ADD_TAGS: ["md-card"] });

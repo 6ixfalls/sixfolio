@@ -81,7 +81,9 @@
       </div>
     </div>
     <div ref="content" class="hidden">
-      <router-view class="m-8 mt-24" />
+      <router-view
+        class="m-8 mt-24 selection:bg-neutral-300 selection:text-neutral-700"
+      />
     </div>
     <div
       ref="intro"

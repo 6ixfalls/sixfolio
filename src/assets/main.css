@@ -43,8 +43,3 @@ h3 {
 a {
     @apply text-blue-600 underline;
 }
-
-md-card {
-    @apply block w-96 h-52;
-    @apply m-8;
-}
