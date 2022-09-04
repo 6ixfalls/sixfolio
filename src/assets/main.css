@@ -43,3 +43,10 @@ h3 {
 a {
     @apply text-blue-600 underline;
 }
+pre {
+    @apply whitespace-normal;
+}
+
+#md-card-container {
+    @apply lg:grid lg:grid-cols-3 2xl:grid-cols-4 desktop:grid-cols-5 gap-8 mt-8;
+}

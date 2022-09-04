@@ -1,7 +1,7 @@
 <template>
   <div
     id="textcontainer"
-    class="text-slate-200 break-words overflow-x-hidden"
+    class="text-slate-200 break-words"
     v-html="markdown"
   ></div>
 </template>
@@ -188,10 +188,21 @@ It is a pity, but markdown does **not** work in here for most markdown parsers.
 [Marked] handles it pretty well.
 </div>
 
-<md-card></md-card><md-card></md-card><md-card></md-card><md-card></md-card><md-card></md-card><md-card></md-card><md-card></md-card><md-card></md-card><md-card></md-card>
+<div id="md-card-container">
+    <md-card></md-card>
+    <md-card></md-card>
+    <md-card></md-card>
+    <md-card></md-card>
+    <md-card></md-card>
+    <md-card></md-card>
+    <md-card></md-card>
+    <md-card></md-card>
+</div>
 `
       );
-      return dompurify.sanitize(markdown, { ADD_TAGS: ["md-card"] });
+      return dompurify.sanitize(markdown, {
+        ADD_TAGS: ["md-card", "md-card-container"],
+      });
     },
   },
   mounted() {

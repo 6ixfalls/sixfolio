@@ -32,6 +32,9 @@ module.exports = {
         star2: 'star1 var(--star-flicker-start) ease-in-out infinite',
         moon: 'moon 5s ease-in-out infinite',
         scrollwheel: 'scrollwheel 1s ease-in-out infinite',
+      },
+      screens: {
+        'desktop': '2048px',
       }
     },
     fontFamily: {

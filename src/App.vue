@@ -5,6 +5,8 @@
     @mousewheel="mouseWheel"
     class="
       h-screen
+      w-screen
+      max-w-full
       absolute
       scrollbar
       scrollbar-thumb-neutral-800
@@ -82,7 +84,12 @@
     </div>
     <div ref="content" class="hidden">
       <router-view
-        class="m-8 mt-24 selection:bg-neutral-300 selection:text-neutral-700"
+        class="
+          m-8
+          mt-24
+          pb-8
+          selection:bg-neutral-300 selection:text-neutral-700
+        "
       />
     </div>
     <div
