@@ -73,7 +73,7 @@
         </a>
       </div>
     </div>
-    <div ref="content" class="hidden">
+    <article ref="content" class="hidden">
       <router-view
         class="
           m-8
@@ -82,7 +82,7 @@
           selection:bg-neutral-300 selection:text-neutral-700
         "
       />
-    </div>
+    </article>
     <div
       ref="intro"
       class="
