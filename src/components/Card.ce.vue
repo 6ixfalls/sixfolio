@@ -4,7 +4,7 @@
     @mousemove="mouseMove"
     @mouseover="mouseOver"
     @mouseleave="mouseLeave"
-    class="w-full h-52 lg:h-48 lg:my-0 my-4"
+    class="w-full h-52 md:h-48 md:my-0 my-4"
   >
     <div
       ref="movement"
@@ -16,6 +16,7 @@
 </template>
 <script>
 import anime from "animejs";
+import { Icon } from "@iconify/vue";
 
 const map = (aval, a1, a2, b1, b2) =>
   ((aval - a1) / (a2 - a1)) * (b2 - b1) + b1;
@@ -28,8 +29,9 @@ export default {
     mouseOver() {
       anime.remove(this.$refs.movement);
     },
-    mouseMove({ x, y, target }) {
-      const { left, top, width, height } = target.getBoundingClientRect();
+    mouseMove({ x, y }) {
+      const { left, top, width, height } =
+        this.$refs.wrapper.getBoundingClientRect();
       const xPos = x - left;
       const yPos = y - top;
       this.$refs.movement.style.transform = `rotateY(${map(
@@ -49,6 +51,9 @@ export default {
         easing: "easeInOutQuad",
       });
     },
+  },
+  components: {
+    Icon,
   },
 };
 </script>

@@ -36,7 +36,6 @@
           :key="route.path"
           class="
             group
-            px-4
             h-full
             transition-colors
             hover:bg-[rgba(255,255,255,0.1)]
@@ -52,6 +51,10 @@
               no-underline
               transition-colors
               group-hover:text-neutral-200
+              px-4
+              h-full
+              flex
+              items-center
             "
             >{{ route.meta.friendly }}</router-link
           >
