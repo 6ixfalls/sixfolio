@@ -8,7 +8,6 @@
 <script>
 import { defineComponent } from "vue";
 import { marked } from "marked";
-import dompurify from "dompurify";
 
 export default defineComponent({
   computed: {
@@ -190,13 +189,16 @@ It is a pity, but markdown does **not** work in here for most markdown parsers.
 
 <div id="md-card-container">
     <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
-    <md-card></md-card>
-    <md-card></md-card>
-    <md-card></md-card>
-    <md-card></md-card>
-    <md-card></md-card>
-    <md-card></md-card>
-    <md-card></md-card>
+    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
+    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
+    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
+    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
+    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
+    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
+    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
+    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
+    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
+    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
 </div>
 `
       );

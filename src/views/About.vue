@@ -8,7 +8,6 @@
 <script>
 import { defineComponent } from "vue";
 import { marked } from "marked";
-import dompurify from "dompurify";
 
 export default defineComponent({
   computed: {
