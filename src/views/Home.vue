@@ -188,17 +188,12 @@ It is a pity, but markdown does **not** work in here for most markdown parsers.
 </div>
 
 <div id="md-card-container">
-    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
-    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
-    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
-    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
-    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
-    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
-    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
-    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
-    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
-    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
-    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
+    <md-card icon="simple-icons:lua" title="Luau" class-list="bg-blue-500"><span>4+ years of experience with Lua and Luau on Roblox. Published multiple games on Roblox; primary game platform currently.</span></md-card>
+    <md-card icon="simple-icons:typescript" title="TypeScript" class-list="bg-blue-500"><span>2+ years of experience, primarily focused on Discord Bots and a few programs. Most used language outside of Lua.</span></md-card>
+    <md-card icon="simple-icons:javascript" title="JavaScript" class-list="bg-yellow-600"><span>3+ years of experience; although I mostly use TypeScript. Primarily used for websites, rarely for Discord Bots.</span></md-card>
+    <md-card icon="simple-icons:java" title="Java" class-list="bg-red-700"><span>2+ years of experience, primarily used for Minecraft development, including plugins and mods. Most experience is with Java 8.</span></md-card>
+    <md-card icon="simple-icons:vuedotjs" title="VUE.JS" class-list="bg-green-600"><span>~6 months of experience, used alongside Vite and Tailwind for website design. This website was made in Vue!</span></md-card>
+    <md-card icon="simple-icons:linux" title="Linux" class-list="bg-blue-900"><span>2+ years of personal sysadmin experience, managing my own servers and creating software for personal hosting use.</span></md-card>
 </div>
 `
       );

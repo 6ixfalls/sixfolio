@@ -1,3 +1,4 @@
+// file deepcode ignore
 import { createVNode, defineComponent, nextTick, warn } from '@vue/runtime-core';
 import { camelize, extend, hyphenate, isArray, toNumber } from '@vue/shared';
 import HTMLParsedElement from 'html-parsed-element';

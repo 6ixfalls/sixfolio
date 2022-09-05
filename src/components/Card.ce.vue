@@ -19,10 +19,17 @@
         flex flex-row
       "
     >
-      <div class="w-3/12 h-full flex justify-center items-center bg-blue-400">
-        <Icon :icon="icon" class="icon-2xl"></Icon>
+      <div
+        class="w-1/3 h-full flex justify-center items-center"
+        :class="classList"
+      >
+        <Icon :icon="icon" class="icon-2xl" color="white"></Icon>
       </div>
-      <div class="grow p-4">{{ description }}</div>
+      <div class="w-full p-4">
+        <span class="text-lg font-semibold">{{ title }}</span>
+        <br />
+        <slot>empty</slot>
+      </div>
     </div>
   </div>
 </template>
@@ -41,6 +48,7 @@ export default {
     title: String,
     description: String,
     icon: String,
+    classList: String,
   },
   methods: {
     mouseOver() {
