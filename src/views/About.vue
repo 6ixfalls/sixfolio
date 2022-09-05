@@ -13,14 +13,14 @@ export default defineComponent({
   computed: {
     markdown() {
       const markdown = marked(
-        `Markdown Quick Reference
+        `About The Markdown Quick Reference
 ========================
 
 This guide is a very brief overview, with examples, of the syntax that [Markdown] supports. It is itself written in Markdown and you can copy the samples over to the left-hand pane for experimentation. It's shown as *text* and not *rendered HTML*.
 
 [Markdown]: http://daringfireball.net/projects/markdown/
 
-About: [/about](/about)
+About:[/about](/about)
 
 
 Simple Text Formatting
@@ -185,15 +185,6 @@ If markdown is too limiting, you can just insert your own <strike>crazy</strike>
 <div style='font-family: "Comic Sans MS", "Comic Sans", cursive;'>
 It is a pity, but markdown does **not** work in here for most markdown parsers.
 [Marked] handles it pretty well.
-</div>
-
-<div id="md-card-container">
-    <md-card icon="simple-icons:lua" title="Luau" class-list="bg-blue-500"><span>4+ years of experience with Lua and Luau on Roblox. Published multiple games on Roblox; primary game platform currently.</span></md-card>
-    <md-card icon="simple-icons:typescript" title="TypeScript" class-list="bg-blue-500"><span>2+ years of experience, primarily focused on Discord Bots and a few programs. Most used language outside of Lua.</span></md-card>
-    <md-card icon="simple-icons:javascript" title="JavaScript" class-list="bg-yellow-600"><span>3+ years of experience; although I mostly use TypeScript. Primarily used for websites, rarely for Discord Bots.</span></md-card>
-    <md-card icon="simple-icons:java" title="Java" class-list="bg-red-700"><span>2+ years of experience, primarily used for Minecraft development, including plugins and mods. Most experience is with Java 8.</span></md-card>
-    <md-card icon="simple-icons:vuedotjs" title="VUE.JS" class-list="bg-green-600"><span>~6 months of experience, used alongside Vite and Tailwind for website design. This website was made in Vue!</span></md-card>
-    <md-card icon="simple-icons:linux" title="Linux" class-list="bg-blue-900"><span>2+ years of personal sysadmin experience, managing my own servers and creating software for personal hosting use.</span></md-card>
 </div>
 `
       );

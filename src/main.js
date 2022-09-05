@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, nextTick } from 'vue'
 import './assets/main.css'
 import App from './App.vue'
 import { routes } from './routes.js'
@@ -8,7 +8,20 @@ let app = createApp(App)
 let router = createRouter({
   history: createWebHistory(),
   routes: import.meta.hot ? [] : routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  },
 })
+
+router.afterEach((to, from) => {
+  nextTick(() => {
+    document.title = `sixfalls - ${to.path}`;
+  });
+});
 
 if (import.meta.hot) {
   let removeRoutes = []
