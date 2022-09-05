@@ -8,9 +8,21 @@
   >
     <div
       ref="movement"
-      class="w-full h-full perspective-96 rounded bg-neutral-800 shadow-xl p-3"
+      class="
+        w-full
+        h-full
+        perspective-96
+        rounded
+        bg-neutral-800
+        shadow-xl
+        overflow-hidden
+        flex flex-row
+      "
     >
-      test
+      <div class="w-3/12 h-full flex justify-center items-center bg-blue-400">
+        <Icon :icon="icon" class="icon-2xl"></Icon>
+      </div>
+      <div class="grow p-4">{{ description }}</div>
     </div>
   </div>
 </template>
@@ -25,6 +37,11 @@ const rotAngle = 25;
 
 export default {
   name: "MarkdownCard",
+  props: {
+    title: String,
+    description: String,
+    icon: String,
+  },
   methods: {
     mouseOver() {
       anime.remove(this.$refs.movement);

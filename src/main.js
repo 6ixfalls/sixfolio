@@ -8,6 +8,13 @@ let app = createApp(App)
 let router = createRouter({
   history: createWebHistory(),
   routes: import.meta.hot ? [] : routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  },
 })
 
 router.afterEach((to, from) => {

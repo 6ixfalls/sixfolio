@@ -10,7 +10,6 @@
   "dependencies": {
     "@iconify/vue": "^3.2.1",
     "animejs": "^3.2.1",
-    "dompurify": "^2.3.10",
     "hammerjs": "^2.0.8",
     "html-parsed-element": "^0.4.1",
     "marked": "^4.0.18",

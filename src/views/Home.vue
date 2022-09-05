@@ -189,7 +189,7 @@ It is a pity, but markdown does **not** work in here for most markdown parsers.
 </div>
 
 <div id="md-card-container">
-    <md-card></md-card>
+    <md-card icon="simple-icons:twitter" title="Twitter" description="ilovetwitter!"></md-card>
     <md-card></md-card>
     <md-card></md-card>
     <md-card></md-card>
@@ -200,9 +200,7 @@ It is a pity, but markdown does **not** work in here for most markdown parsers.
 </div>
 `
       );
-      return dompurify.sanitize(markdown, {
-        ADD_TAGS: ["md-card", "md-card-container"],
-      });
+      return markdown;
     },
   },
   mounted() {

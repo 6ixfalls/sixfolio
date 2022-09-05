@@ -189,7 +189,7 @@ It is a pity, but markdown does **not** work in here for most markdown parsers.
 </div>
 `
       );
-      return dompurify.sanitize(markdown);
+      return markdown;
     },
   },
   mounted() {
