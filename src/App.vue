@@ -45,7 +45,9 @@
         </article>
         <div
             ref="intro"
-            class="fixed w-screen h-screen flex items-center justify-center text-white select-none"
+            :class="`fixed w-screen h-screen flex items-center justify-center text-white select-none ${
+                onIntro || !scrollAnimation.completed ? '' : 'hidden'
+            }`"
             v-if="this.$route.path === '/'"
         >
             <div ref="moon" class="absolute w-32 top-[10%] right-[10%]">

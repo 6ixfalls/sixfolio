@@ -16,10 +16,9 @@ export default defineComponent({
             const markdown = marked(`
 # **Who am I**
         
-I'm Bryan, a full-stack and game developer with 4+ years of expertise in Luau and JavaScript. I create games, websites, and software.
+Hey there! I'm Bryan, a full-stack and game developer with 4+ years of expertise in Luau and JavaScript. I create games, websites, and software.
  I also work on commissions and part-time work. I've worked with several Roblox development studios as well as developing websites and bots. 
- I'm also enthusiastic about creating user interfaces that are fluid, clear, and simple to use and understand. 
- I'm also interested in creating games that are enjoyable to play and provide a one-of-a-kind experience.
+ I'm also enthusiastic about creating user interfaces that are fluid, clear, and simple to use and understand, as well as creating games that are enjoyable to play and provide a one-of-a-kind experience.
 
 # **Technology**
 <div id="md-card-container">
@@ -30,6 +29,17 @@ I'm Bryan, a full-stack and game developer with 4+ years of expertise in Luau an
     <md-card icon="simple-icons:vuedotjs" title="VUE.JS" class-list="bg-green-600"><span>~6 months of experience, used alongside Vite and Tailwind for website design, such as my portfolio.</span></md-card>
     <md-card icon="simple-icons:linux" title="Linux" class-list="bg-blue-900"><span>2+ years of personal sysadmin experience, managing my own servers and creating software for personal hosting use.</span></md-card>
 </div>
+
+# **Contact**
+You can find me on the following platforms. I'm most active on Discord, but I'm also active on Twitter and Github.
+
+Discord: <a href="https://discord.com/users/303173495918034945" class="no-underline">sixfalls#0001</a>
+
+Twitter: <a href="https://twitter.com/6ixfalls" class="no-underline">6ixfalls</a>
+
+Github: <a href="https://github.com/6ixfalls" class="no-underline">6ixfalls</a>
+
+I look forward to working with you!
 `);
             return markdown;
         },
