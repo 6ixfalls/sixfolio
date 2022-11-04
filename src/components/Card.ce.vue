@@ -40,6 +40,9 @@ import { Icon } from "@iconify/vue";
 const map = (aval, a1, a2, b1, b2) =>
   ((aval - a1) / (a2 - a1)) * (b2 - b1) + b1;
 
+const easeOutQuad = (x) =>
+  x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+
 const rotAngle = 25;
 
 export default {
@@ -60,12 +63,18 @@ export default {
       const xPos = x - left;
       const yPos = y - top;
       this.$refs.movement.style.transform = `rotateY(${map(
-        xPos,
+        easeOutQuad(xPos / width),
         0,
-        width,
+        1,
         -rotAngle,
         rotAngle
-      )}deg) rotateX(${map(yPos, 0, height, rotAngle, -rotAngle)}deg)`;
+      )}deg) rotateX(${map(
+        easeOutQuad(yPos / height),
+        0,
+        1,
+        rotAngle,
+        -rotAngle
+      )}deg)`;
     },
     mouseLeave() {
       anime({
