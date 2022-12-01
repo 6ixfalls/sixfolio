@@ -70,9 +70,9 @@
                         'h-1': n % 4 === 3,
                     }"
                     :style="{
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
-                        'animation-delay': `${Math.random()}s`,
+                        left: `${random() * 100}%`,
+                        top: `${random() * 100}%`,
+                        'animation-delay': `${random()}s`,
                     }"
                 />
             </div>
@@ -141,6 +141,7 @@ import anime from "animejs";
 import normalizeWheel from "normalize-wheel";
 import Hammer from "hammerjs";
 import { Icon } from "@iconify/vue";
+import seedrandom from "seedrandom";
 import Card from "./components/Card.ce.vue";
 
 const range = 18;
@@ -168,6 +169,16 @@ export default defineComponent({
                 },
             },
         };
+    },
+    beforeMount() {
+        const random = Object.freeze(seedrandom(null, { state: true }));
+        this.$options.randomState = random.state();
+        this.$options.random = random;
+
+        customElements.define(
+            "md-card",
+            defineCustomElement(Card, { shadowRoot: false })
+        ); // define markdown card component
     },
     mounted() {
         delete Hammer.defaults.cssProps.userSelect;
@@ -248,11 +259,6 @@ export default defineComponent({
         });
 
         this.$data.hammer.on("swipe", this.pageScroll);
-
-        customElements.define(
-            "md-card",
-            defineCustomElement(Card, { shadowRoot: false })
-        ); // define markdown card component
     },
     methods: {
         mouseMove({ x, y }) {
@@ -295,6 +301,14 @@ export default defineComponent({
                 this.$data.scrollAnimation.play();
             }
         },
+        random(...args) {
+            return this.$options.random(...args);
+        },
+    },
+    beforeUpdate() {
+        this.$options.random = Object.freeze(
+            seedrandom(null, { state: this.$options.randomState })
+        );
     },
     components: {
         Icon,
