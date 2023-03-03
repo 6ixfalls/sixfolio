@@ -8,7 +8,8 @@
     >
         <div
             ref="movement"
-            class="w-full h-full perspective-96 rounded bg-neutral-800 shadow-xl overflow-hidden flex flex-row"
+            class="w-full h-full perspective-96 rounded bg-neutral-800 bg-gradient-to-b from-neutral-800 to-neutral-900 bg-no-repeat shadow-xl overflow-hidden flex flex-row"
+            style="background-position: center 20rem"
         >
             <div
                 class="w-1/3 h-full flex justify-center items-center"
@@ -66,12 +67,20 @@ export default {
                 rotAngle,
                 -rotAngle
             )}deg)`;
+            this.$refs.movement.style.backgroundPosition = `center ${map(
+                easeOutQuad(yPos / height),
+                0,
+                1,
+                20,
+                0
+            )}rem`;
         },
         mouseLeave() {
             anime({
                 targets: this.$refs.movement,
                 rotateX: "0deg",
                 rotateY: "0deg",
+                backgroundPosition: "center 20rem",
                 duration: 250,
                 easing: "easeInOutQuad",
             });
