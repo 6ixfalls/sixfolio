@@ -45,37 +45,54 @@ export default {
         icon: String,
         classList: String,
     },
+    data: () => ({
+        rotationalMultiplier: 0,
+        x: 0,
+        y: 0,
+        id: null,
+    }),
     methods: {
         mouseOver() {
             anime.remove(this.$refs.movement);
+            anime({
+                targets: this.$data,
+                rotationalMultiplier: 1,
+                duration: 150,
+                easing: "easeInOutQuad",
+            });
+            this.$data.id = window.requestAnimationFrame(this.animationUpdated);
         },
-        mouseMove({ x, y }) {
+        animationUpdated() {
+            if (!this.$data.id) return;
             const { left, top, width, height } =
                 this.$refs.wrapper.getBoundingClientRect();
-            const xPos = x - left;
-            const yPos = y - top;
-            this.$refs.movement.style.transform = `rotateY(${map(
-                easeOutQuad(xPos / width),
-                0,
-                1,
-                -rotAngle,
-                rotAngle
-            )}deg) rotateX(${map(
-                easeOutQuad(yPos / height),
-                0,
-                1,
-                rotAngle,
-                -rotAngle
-            )}deg)`;
+            const xPos = this.$data.x - left;
+            const yPos = this.$data.y - top;
+            this.$refs.movement.style.transform = `rotateY(${
+                map(easeOutQuad(xPos / width), 0, 1, -rotAngle, rotAngle) *
+                this.$data.rotationalMultiplier
+            }deg) rotateX(${
+                map(easeOutQuad(yPos / height), 0, 1, rotAngle, -rotAngle) *
+                this.$data.rotationalMultiplier
+            }deg)`;
             this.$refs.movement.style.backgroundPosition = `center ${map(
-                easeOutQuad(yPos / height),
+                easeOutQuad(yPos / height) * this.$data.rotationalMultiplier,
                 0,
                 1,
                 20,
                 0
             )}rem`;
+            this.$data.id = window.requestAnimationFrame(this.animationUpdated);
+        },
+        mouseMove({ x, y }) {
+            this.$data.x = x;
+            this.$data.y = y;
         },
         mouseLeave() {
+            window.cancelAnimationFrame(this.$data.id);
+            this.$data.id = null;
+            anime.remove(this.$data);
+            this.$data.rotationalMultiplier = 0;
             anime({
                 targets: this.$refs.movement,
                 rotateX: "0deg",
