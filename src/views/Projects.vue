@@ -25,7 +25,6 @@ There are infinite possibilities for what people can do. Here are some of my pro
   <a href="https://github.com/6ixfalls/6ixfalls" target="_blank"><md-card icon="simple-icons:javascript" cardtitle="Github README" class-list="bg-yellow-600"><span>A custom Github README file, with dynamically updating repository data through Github Actions and the Github API.</span></md-card></a>
   <a href="https://www.roblox.com/games/10058186232/Bahas-Globe-Challenge" target="_blank"><md-card icon="simple-icons:roblox" cardtitle="Baha's Globe Challenge" class-list="bg-red-600"><span>A challange to, based off of data of cities, populate a 3D model with cities that you can explore. Completed in < 1 hour.</span></md-card></a>
   <a href="https://github.com/6ixfalls/sixshx" target="_blank"><md-card icon="simple-icons:typescript" cardtitle="Custom CDN" class-list="bg-blue-500"><span>A custom implementation of a CDN supporting ShareX storing files through S3.</span></md-card></a>
-  <a href="https://www.roblox.com/games/8516595696/Crypto-Simulator-BETA" target="_blank"><md-card icon="simple-icons:typescript" cardtitle="Custom CDN" class-list="bg-blue-500"><span>A custom implementation of a CDN supporting ShareX storing files through S3.</span></md-card></a>
 </div>
 
 # **Contributions**
