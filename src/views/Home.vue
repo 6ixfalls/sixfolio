@@ -22,12 +22,12 @@ Hey there! I'm Bryan, a full-stack and game developer with 4+ years of expertise
 
 # **Technology**
 <div id="md-card-container">
-    <md-card icon="simple-icons:lua" cardtitle="Luau" class-list="bg-blue-500"><span>4+ years of experience with Lua and Luau on Roblox. Published multiple games on Roblox; primary game platform currently.</span></md-card>
-    <md-card icon="simple-icons:typescript" cardtitle="TypeScript" class-list="bg-blue-500"><span>2+ years of experience, primarily focused on Discord Bots and a few programs. Most used language outside of Lua.</span></md-card>
-    <md-card icon="simple-icons:javascript" cardtitle="JavaScript" class-list="bg-yellow-600"><span>3+ years of experience; although I mostly use TypeScript. Primarily used for websites, rarely for Discord Bots.</span></md-card>
+    <md-card icon="simple-icons:lua" cardtitle="Luau" class-list="bg-blue-500"><span>5+ years of experience with Lua and Luau on Roblox. Published multiple games on Roblox; primary game platform currently.</span></md-card>
+    <md-card icon="simple-icons:typescript" cardtitle="TypeScript" class-list="bg-blue-500"><span>3+ years of experience, primarily focused on Discord Bots and a few programs. Most used language outside of Lua.</span></md-card>
+    <md-card icon="simple-icons:javascript" cardtitle="JavaScript" class-list="bg-yellow-600"><span>4+ years of experience; although I mostly use TypeScript. Primarily used for websites, rarely for Discord Bots.</span></md-card>
     <md-card icon="simple-icons:java" cardtitle="Java" class-list="bg-red-700"><span>2+ years of experience, primarily used for Minecraft development, including plugins and mods, primarily in Java 8.</span></md-card>
-    <md-card icon="simple-icons:vuedotjs" cardtitle="VUE.JS" class-list="bg-green-600"><span>~6 months of experience, used alongside Vite and Tailwind for website design, such as my portfolio.</span></md-card>
-    <md-card icon="simple-icons:linux" cardtitle="Linux" class-list="bg-blue-900"><span>2+ years of personal sysadmin experience, managing my own servers and creating software for personal hosting use.</span></md-card>
+    <md-card icon="simple-icons:vuedotjs" cardtitle="VUE.JS" class-list="bg-green-600"><span>~1 year of experience, used alongside Vite and Tailwind for website design, such as my portfolio.</span></md-card>
+    <md-card icon="simple-icons:linux" cardtitle="Linux" class-list="bg-blue-900"><span>3+ years of personal sysadmin experience, managing my own servers and creating software for personal hosting use.</span></md-card>
 </div>
 
 # **Contact**
