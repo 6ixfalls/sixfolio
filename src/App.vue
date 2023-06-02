@@ -123,6 +123,7 @@
             <div
                 ref="scroll"
                 class="absolute bottom-12 animate-bounce drop-shadow-[0_1px_2px_rgb(150_150_150)]"
+                style="top: calc(100svh - 3rem - 2em);"
             >
                 <Icon
                     icon="akar-icons:chevron-down"
