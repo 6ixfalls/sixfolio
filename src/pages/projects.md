@@ -1,19 +1,7 @@
-<template>
-    <div
-        id="textcontainer"
-        class="text-slate-200 break-words"
-        v-html="markdown"
-    ></div>
-</template>
-<script>
-import { defineComponent } from "vue";
-import { marked } from "marked";
-
-// prettier-ignore
-export default defineComponent({
-  computed: {
-      markdown() {
-          const markdown = marked(`
+---
+layout: root
+title: Projects
+---
 # **Completed Projects**
       
 There are infinite possibilities for what people can do. Here are some of my projects that I've completed. Many of my projects have been either done in private, or through commissions, which can be provided on <a class="no-underline" href="/">request</a>.
@@ -44,23 +32,3 @@ Below are some games, projects, and things I've contributed to over the times.
   <a href="https://www.roblox.com/games/5905669674/Vibe-Tokyo" target="_blank"><md-card icon="simple-icons:roblox" cardtitle="Vibe Tokyo" class-list="bg-red-600"><span>Small changes, added elevator and other fixes.</span></md-card></a>
   <a href="https://www.roblox.com/groups/5206342/Delta-Air-Lines-DAL#!/about" target="_blank"><md-card icon="simple-icons:roblox" cardtitle="Delta Air Lines (roblox)" class-list="bg-red-600"><span>Bug fixes, etc, worked as a developer.</span></md-card></a>
 </div>
-`);
-          return markdown;
-      },
-  },
-  mounted() {
-      document.querySelectorAll("#textcontainer a").forEach((a) => {
-          a.addEventListener("click", (e) => {
-              const href = a.attributes.href.value;
-
-              if (
-                  !(href.startsWith("http://") || href.startsWith("https://"))
-              ) {
-                  e.preventDefault();
-                  this.$router.push({ path: a.attributes.href.value });
-              }
-          });
-      });
-  },
-});
-</script>

@@ -1,19 +1,7 @@
-<template>
-    <div
-        id="textcontainer"
-        class="text-slate-200 break-words"
-        v-html="markdown"
-    ></div>
-</template>
-<script>
-import { defineComponent } from "vue";
-import { marked } from "marked";
-
-// prettier-ignore
-export default defineComponent({
-    computed: {
-        markdown() {
-            const markdown = marked(`
+---
+layout: root
+title: Home
+---
 # **Who am I**
         
 Hey there! I'm Bryan, a full-stack and game developer with 4+ years of expertise in Luau and JavaScript. I create games, websites, and software.
@@ -40,23 +28,3 @@ Twitter: <a href="https://twitter.com/6ixfalls" class="no-underline">6ixfalls</a
 Github: <a href="https://github.com/6ixfalls" class="no-underline">6ixfalls</a>
 
 I look forward to working with you!
-`);
-            return markdown;
-        },
-    },
-    mounted() {
-        document.querySelectorAll("#textcontainer a").forEach((a) => {
-            a.addEventListener("click", (e) => {
-                const href = a.attributes.href.value;
-
-                if (
-                    !(href.startsWith("http://") || href.startsWith("https://"))
-                ) {
-                    e.preventDefault();
-                    this.$router.push({ path: a.attributes.href.value });
-                }
-            });
-        });
-    },
-});
-</script>
