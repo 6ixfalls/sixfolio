@@ -3,12 +3,16 @@ backend:
   repo: 6ixfalls/sixfolio
   branch: master
   site_url: https://sixfalls.me/
-  base_url: https://cms.sixfalls.me/
+  base_url: https://sixfalls.me/
+  auth_endpoint: admin/auth
   cms_label_prefix: cms/
 
-publish_mode: editorial_workflow
 media_folder: "public/img/uploads"
 public_folder: "/img/uploads"
+site_url: https://sixfalls.me/
+display_url: https://sixfalls.me/
+logo_url: https://dcdn.dstn.to/avatars/303173495918034945
+show_preview_links: true
 
 collections:
   - name: "static"
@@ -16,6 +20,7 @@ collections:
     folder: "src/pages"
     create: true
     slug: "{{slug}}"
+    preview_path: "{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "static" }
       - { label: "Title", name: "title", widget: "string" }
@@ -25,6 +30,7 @@ collections:
     folder: "src/pages/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "blog/{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
       - { label: "Title", name: "title", widget: "string" }
