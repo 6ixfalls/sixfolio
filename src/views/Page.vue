@@ -10,12 +10,13 @@ import { defineComponent } from "vue";
 import markdownIt from "markdown-it";
 import markdownItEmoji from "markdown-it-emoji";
 import markdownItAbbr from "markdown-it-abbr";
+import markdownItContainer from "markdown-it-container";
 import twemoji from "twemoji";
 import hljs from "highlight.js";
 
 const markdown = markdownIt({
-    html: true,
-    xhtmlOut: true,
+    html: false,
+    xhtmlOut: false,
     breaks: true,
     langPrefix: "language-",
     linkify: true,
@@ -48,6 +49,65 @@ markdown.renderer.rules.emoji = function (token, idx) {
 };
 // abbr
 markdown.use(markdownItAbbr);
+// cards based off of Card.ce.vue
+markdown.use(markdownItContainer, "card", {
+    validate: function (params) {
+        return params.trim().match(/^card\s+(.*)$/);
+    },
+    render: function (tokens, idx) {
+        let token = tokens[idx];
+
+        // check if closing tag
+        if (tokens[idx].nesting === -1) {
+            // search for the opening tag
+            token = tokens
+                .slice(0, idx)
+                .reverse()
+                .find(
+                    (token) =>
+                        token.type === "container_card_open" &&
+                        token.nesting === 1 &&
+                        token.level === tokens[idx].level
+                );
+        }
+
+        const m = token.info.trim().match(/^card\s+(.*)$/);
+
+        // parse attributes from the card tag
+        const attributes = {};
+        const attributeRegex = /([^\s=]+)=["']([^"']*)["']/g;
+        let match;
+        while ((match = attributeRegex.exec(m[1])) !== null) {
+            attributes[match[1]] = match[2];
+        }
+
+        const href = attributes.href;
+        delete attributes.href;
+
+        if (tokens[idx].nesting === 1) {
+            // opening tag
+            return `${href ? `<a href=${href}>` : ""}<md-card ${Object.keys(
+                attributes
+            )
+                .map((key) => `${key}="${attributes[key]}"`)
+                .join(" ")}><span>`;
+        } else {
+            return `</span></md-card>${href ? "</a>" : ""}\n`;
+        }
+    },
+});
+// markdown containers (no params)
+markdown.use(markdownItContainer, "container", {
+    render: function (tokens, idx) {
+        if (tokens[idx].nesting === 1) {
+            // opening tag
+            return `<div id="md-card-container">`;
+        } else {
+            // closing tag
+            return "</div>\n";
+        }
+    },
+});
 
 // prettier-ignore
 export default defineComponent({

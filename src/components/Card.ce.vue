@@ -19,7 +19,7 @@
                 <Icon :icon="icon" class="icon-2xl" color="white"></Icon>
             </div>
             <div class="w-full p-4">
-                <span class="text-lg font-semibold">{{ cardtitle }}</span>
+                <span class="text-lg font-semibold">{{ cardTitle }}</span>
                 <br />
                 <slot>empty</slot>
             </div>
@@ -77,7 +77,7 @@ const rotAngle = 15;
 export default {
     name: "MarkdownCard",
     props: {
-        cardtitle: String,
+        cardTitle: String,
         description: String,
         icon: String,
         classList: String,
