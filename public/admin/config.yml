@@ -13,6 +13,7 @@ site_url: https://sixfalls.me/
 display_url: https://sixfalls.me/
 logo_url: https://dcdn.dstn.to/avatars/303173495918034945
 show_preview_links: true
+publish_mode: editorial_workflow
 
 collections:
   - name: "static"
