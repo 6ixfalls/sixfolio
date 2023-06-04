@@ -13,7 +13,7 @@ function addRoute(page, pageContent) {
   builtRoutes.push({
     path,
     component: Page,
-    meta: { friendly: attributes.title },
+    meta: { friendly: attributes.title, topbar: attributes.topbar },
     props: { body, attributes },
   });
 }

@@ -123,7 +123,7 @@
             <div
                 ref="scroll"
                 class="absolute bottom-12 supports-[top:100svh]:!bottom-auto animate-bounce drop-shadow-[0_1px_2px_rgb(150_150_150)]"
-                style="top: calc(100svh - 3rem - 2em);"
+                style="top: calc(100svh - 3rem - 2em)"
             >
                 <Icon
                     icon="akar-icons:chevron-down"
@@ -152,7 +152,12 @@ const calcValue = (a, b) => ((a / b) * range - range / 2).toFixed(1);
 export default defineComponent({
     computed: {
         routes() {
-            return this.$router.getRoutes().filter((i) => i.meta.friendly);
+            // only show first level routes
+            return this.$router
+                .getRoutes()
+                .filter(
+                    (route) => route.meta.topbar === true && route.meta.friendly
+                );
         },
     },
     data() {

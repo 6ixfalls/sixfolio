@@ -23,6 +23,7 @@ collections:
     preview_path: "{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "static" }
+      - { label: "Topbar", name: "topbar", widget: "boolean", default: "true" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "blog"
@@ -33,5 +34,6 @@ collections:
     preview_path: "blog/{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Topbar", name: "topbar", widget: "boolean", default: "false" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }

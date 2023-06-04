@@ -1,5 +1,6 @@
 ---
-layout: root
+layout: static
+topbar: true
 title: Home
 ---
 # **Who am I**
