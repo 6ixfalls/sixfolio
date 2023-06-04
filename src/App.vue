@@ -32,6 +32,7 @@
                     v-for="icon in icons"
                     :key="icon.name"
                     :href="icon.url"
+                    target="_blank"
                     class="text-white no-underline transition-colors hover:text-neutral-300"
                 >
                     <Icon :icon="icon.name" class="icon-lg mx-2" />
