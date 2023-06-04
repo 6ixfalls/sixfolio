@@ -1,5 +1,5 @@
 ---
-title: Title
+title: Test Title
 ---
 # Markdown: Syntax
 
