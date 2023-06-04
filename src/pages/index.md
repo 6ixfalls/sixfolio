@@ -37,6 +37,7 @@ Hey there! I'm Bryan, a full-stack and game developer with 4+ years of expertise
 :﻿::
 :﻿:: card icon="simple-icons:proxmox" card-title="Proxmox" class-list="bg-amber-500"
 ~﻿5 months of experience, using Proxmox to virtualize machines for a homelab and Kubernetes cluster.
+:﻿::
 ::::
 
 # **Contact**
