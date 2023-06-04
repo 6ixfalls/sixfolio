@@ -29,6 +29,14 @@ Hey there! I'm Bryan, a full-stack and game developer with 4+ years of expertise
 ::: card icon="simple-icons:linux" card-title="Linux" class-list="bg-blue-900"
 3+ years of personal sysadmin experience, managing my own servers and creating software for personal hosting use.
 :::
+:﻿:: card icon="simple-icons:docker" card-title="Docker" class-list="bg-blue-900"
+3﻿+ years of Docker management, including Dockerfiles and docker-compose to easily manage numerous services.
+:﻿::
+:﻿:: card icon="simple-icons:kubernetes" card-title="Kubernetes" class-list="bg-blue-900"
+~﻿4 months of experience, using Rancher, Kubernetes and k3s to deploy highly available services, as well as networking.
+:﻿::
+:﻿:: card icon="simple-icons:proxmox" card-title="Proxmox" class-list="bg-amber-500"
+~﻿5 months of experience, using Proxmox to virtualize machines for a homelab and Kubernetes cluster.
 ::::
 
 # **Contact**
