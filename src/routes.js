@@ -1,6 +1,6 @@
 import { Buffer } from 'buffer';
 globalThis.Buffer = Buffer;
-import * as matter from 'gray-matter';
+import matter from 'front-matter';
 import Page from './views/Page.vue';
 
 /** @type {import('vue-router').RouterOptions['routes']} */
@@ -9,12 +9,12 @@ const builtRoutes = [];
 function addRoute(page, pageContent) {
   const pageName = page.replace('./pages/', '').replace('.md', '');
   const path = pageName === 'index' ? '/' : `/${pageName}`;
-  const { data, content } = matter(pageContent);
+  const { attributes, body } = matter(pageContent);
   builtRoutes.push({
     path,
     component: Page,
-    meta: { friendly: data.title },
-    props: { content, data },
+    meta: { friendly: attributes.title },
+    props: { body, attributes },
   });
 }
 
