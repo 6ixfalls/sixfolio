@@ -136,13 +136,14 @@
 </template>
 
 <script>
-import { defineComponent, nextTick } from "vue";
+import { defineComponent } from "vue";
 import { defineCustomElement } from "./apiCustomElement";
 import anime from "animejs";
 import normalizeWheel from "normalize-wheel";
 import Hammer from "hammerjs";
 import { Icon } from "@iconify/vue";
 import seedrandom from "seedrandom";
+import "highlight.js/styles/atom-one-dark.css";
 import Card from "./components/Card.ce.vue";
 
 const range = 18;
