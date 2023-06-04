@@ -12,7 +12,7 @@
     "@types/seedrandom": "^3.0.2",
     "animejs": "^3.2.1",
     "buffer": "^6.0.3",
-    "gray-matter": "^4.0.3",
+    "front-matter": "^4.0.2",
     "hammerjs": "^2.0.8",
     "html-parsed-element": "^0.4.1",
     "marked": "^5.0.4",

@@ -12,12 +12,12 @@ import { marked } from "marked";
 // prettier-ignore
 export default defineComponent({
     props: {
-        data: Object,
-        content: String,
+        attributes: Object,
+        body: String,
     },
     computed: {
         markdown() {
-            const markdown = marked(this.content, {headerIds: false, mangle: false});
+            const markdown = marked(this.body, {headerIds: false, mangle: false});
             return markdown;
         },
     },
