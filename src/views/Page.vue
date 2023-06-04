@@ -8,6 +8,8 @@
 <script>
 import { defineComponent } from "vue";
 import markdownIt from "markdown-it";
+import markdownItEmoji from "markdown-it-emoji";
+import markdownItAbbr from "markdown-it-abbr";
 import twemoji from "twemoji";
 import hljs from "highlight.js";
 
@@ -40,12 +42,12 @@ const markdown = markdownIt({
 });
 
 // emoji
-markdown.use((await import("markdown-it-emoji")).default);
+markdown.use(markdownItEmoji);
 markdown.renderer.rules.emoji = function (token, idx) {
     return twemoji.parse(token[idx].content);
 };
 // abbr
-markdown.use((await import("markdown-it-abbr")).default);
+markdown.use(markdownItAbbr);
 
 // prettier-ignore
 export default defineComponent({

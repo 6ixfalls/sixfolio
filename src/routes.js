@@ -1,5 +1,7 @@
 import { Buffer } from 'buffer';
 globalThis.Buffer = Buffer;
+import punycode from 'punycode/';
+globalThis.punycode = punycode;
 import matter from 'front-matter';
 import Page from './views/Page.vue';
 
