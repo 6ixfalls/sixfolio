@@ -5,25 +5,25 @@ title: Projects
 ---
 # **Completed Projects**
 
-There are infinite possibilities for what people can do. Here are some of my projects that I've completed. Many of my projects have been either done in private, or through commissions, which can be provided on <a class="no-underline" href="/">request</a>.
+There are infinite possibilities for what people can do. Here are some of my projects that I've completed. Many of my projects have been either done in private, or through commissions, which can be provided on [request](/ "Home")</a>.
 
 :::: container
 ::: card icon="simple-icons:roblox" card-title="Pet Tower Tycoon" class-list="bg-red-600" href="https://www.roblox.com/games/11731663131"
 A Roblox tycoon game where you can build a tower, merge pets, and evolve them into higher ones. Fully scripted by myself in ~2 weeks.
 :::
-::: card icon="simple-icons:html5" card-title="QuickAbout" class-list="bg-orange-500"
+::: card icon="simple-icons:html5" card-title="QuickAbout" class-list="bg-orange-500" href="https://about.sixfalls.me/"
 A simple about page based off of the Comfy BetterDiscord theme. Uses lanyard to show the user's discord status and information.
 :::
-::: card icon="simple-icons:typescript" card-title="RPresence" class-list="bg-blue-500"
+::: card icon="simple-icons:typescript" card-title="RPresence" class-list="bg-blue-500" href="https://github.com/6ixfalls/RPresence"
 Custom implementation of a discord status/presence for Roblox, which utilizes electron and windows APIs to listen to processes.
 :::
-::: card icon="simple-icons:javascript" card-title="Github README" class-list="bg-yellow-600"
+::: card icon="simple-icons:javascript" card-title="Github README" class-list="bg-yellow-600" href="https://github.com/6ixfalls/6ixfalls"
 A custom Github README file, with dynamically updating repository data through Github Actions and the Github API.
 :::
-::: card icon="simple-icons:roblox" card-title="Baha&apos;s Globe Challenge" class-list="bg-red-600"
+::: card icon="simple-icons:roblox" card-title="Baha&apos;s Globe Challenge" class-list="bg-red-600" href="https://www.roblox.com/games/10058186232"
 A challange to, based off of data of cities, populate a 3D model with cities that you can explore. Completed in < 1 hour.
 :::
-::: card icon="simple-icons:typescript" card-title="Custom CDN" class-list="bg-blue-500"
+::: card icon="simple-icons:typescript" card-title="Custom CDN" class-list="bg-blue-500" href="https://github.com/6ixfalls/sixshx"
 A custom implementation of a CDN supporting ShareX storing files through S3.
 :::
 ::::
