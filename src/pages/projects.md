@@ -5,7 +5,7 @@ title: Projects
 ---
 # **Completed Projects**
 
-There are infinite possibilities for what people can do. Here are some of my projects that I've completed. Many of my projects have been either done in private, or through commissions, which can be provided on [request](/ "Home")</a>.
+There are infinite possibilities for what people can do. Here are some of my projects that I've completed. Many of my projects have been either done in private, or through commissions, which can be provided on [request](/ "Home").
 
 :::: container
 ::: card icon="simple-icons:roblox" card-title="Pet Tower Tycoon" class-list="bg-red-600" href="https://www.roblox.com/games/11731663131"
