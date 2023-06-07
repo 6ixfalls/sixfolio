@@ -43,7 +43,7 @@ Hey there! I'm Bryan, a full-stack and game developer with 4+ years of expertise
 # **Contact**
 You can find me on the following platforms. I'm most active on Discord, but I'm also active on Twitter and Github.
 
-Discord: [sixfalls#0001](https://discord.com/users/303173495918034945 "sixfalls#0001")
+Discord: [sixfalls](https://discord.com/users/303173495918034945 "sixfalls")
 Twitter: [6ixfalls](https://twitter.com/6ixfalls "6ixfalls")
 Github: [6ixfalls](https://github.com/6ixfalls "6ixfalls")
 
