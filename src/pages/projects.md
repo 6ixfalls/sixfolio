@@ -20,7 +20,7 @@ Custom implementation of a discord status/presence for Roblox, which utilizes el
 ::: card icon="simple-icons:javascript" card-title="Github README" class-list="bg-yellow-600"
 A custom Github README file, with dynamically updating repository data through Github Actions and the Github API.
 :::
-::: card icon="simple-icons:roblox" card-title="Baha's Globe Challenge" class-list="bg-red-600"
+::: card icon="simple-icons:roblox" card-title="Baha&apos;s Globe Challenge" class-list="bg-red-600"
 A challange to, based off of data of cities, populate a 3D model with cities that you can explore. Completed in < 1 hour.
 :::
 ::: card icon="simple-icons:typescript" card-title="Custom CDN" class-list="bg-blue-500"
