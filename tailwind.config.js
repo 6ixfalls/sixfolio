@@ -72,6 +72,5 @@ module.exports = {
       },
         { values: theme('width') });
     }),
-    //require('tailwind-scrollbar'),
   ],
 }
