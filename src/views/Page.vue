@@ -1,9 +1,16 @@
 <template>
-    <div
-        id="textcontainer"
-        class="text-slate-200 break-words"
-        v-html="markdown"
-    ></div>
+    <div id="container">
+        <div
+            id="textcontainer"
+            class="text-slate-200 break-words"
+            v-html="markdown"
+        ></div>
+        <div
+            id="comments"
+            class="py-4"
+            v-if="attributes.comments_enabled"
+        ></div>
+    </div>
 </template>
 <script>
 import { defineComponent } from "vue";
@@ -13,6 +20,7 @@ import markdownItAbbr from "markdown-it-abbr";
 import markdownItContainer from "markdown-it-container";
 import twemoji from "twemoji";
 import hljs from "highlight.js";
+import postscribe from "postscribe";
 
 const markdown = markdownIt({
     html: false,
@@ -153,6 +161,26 @@ export default defineComponent({
                 }
             });
         });
+
+        if (this.attributes.comments_enabled) {
+            postscribe("#comments", `<script
+        src="https://giscus.app/client.js"
+        data-repo="6ixfalls/sixfolio"
+        data-repo-id="R_kgDOH0g_pw"
+        data-category="Blog"
+        data-category-id="DIC_kwDOH0g_p84CXeJP"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async
+    ><\/script>`);
+        }
     },
 });
 </script>

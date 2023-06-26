@@ -36,5 +36,11 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
       - { label: "Topbar", name: "topbar", widget: "boolean", default: "false" }
+      - {
+          label: "Comments",
+          name: "comments_enabled",
+          widget: "boolean",
+          default: "true",
+        }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }

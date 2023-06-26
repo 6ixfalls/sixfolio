@@ -1,6 +1,7 @@
 ---
 layout: blog
 topbar: false
+comments_enabled: true
 title: markdown-it demo
 ---
 # h1 Heading 8-)
