@@ -22,6 +22,8 @@ import twemoji from "twemoji";
 import hljs from "highlight.js";
 import postscribe from "postscribe";
 
+const AverageWordsPerMinute = 265;
+
 const markdown = markdownIt({
     html: false,
     xhtmlOut: false,
@@ -143,6 +145,12 @@ export default defineComponent({
                 const breakEl = document.createElement("break");
                 div.before(breakEl);
             }
+
+            const text = doc.body.innerText;
+            const words = text.trim().split(/\s+/).length;
+            const minutes = Math.ceil(words / AverageWordsPerMinute);
+
+            console.log(`${minutes} min. read`);
 
             rendered = doc.body.innerHTML;
             return rendered;
