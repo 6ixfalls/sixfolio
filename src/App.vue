@@ -7,7 +7,7 @@
     >
         <div
             ref="topbar"
-            class="fixed top-4 left-1/2 -translate-x-1/2 bg-[rgba(255,255,255,0.1)] rounded backdrop-blur-sm border border-[rgba(255,255,255,0.1)] shadow-xl w-[85%] md:w-[40rem] h-12 z-10 flex items-center justify-between select-none"
+            class="fixed top-4 left-[50vw] -translate-x-1/2 bg-[rgba(255,255,255,0.1)] rounded backdrop-blur-sm border border-[rgba(255,255,255,0.1)] shadow-xl w-[85%] md:w-[40rem] h-12 z-10 flex items-center justify-between select-none"
         >
             <router-link
                 class="m-4 font-medium text-white fixed no-underline"
