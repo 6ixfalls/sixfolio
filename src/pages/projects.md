@@ -9,7 +9,7 @@ There are infinite possibilities for what people can do. Here are some of my pro
 
 :::: container
 ::: card icon="simple-icons:roblox" card-title="Grimace" class-list="bg-red-600" href="https://www.roblox.com/games/13896062842"
-A Roblox horror game based off of the TikTok McDonald's Grimace Shake Challenge. Completed in 2 days, achieving 800+ CCU at its peak.
+A Roblox horror game based off of the TikTok McDonald's Grimace Shake Challenge. Completed in 2 days, achieving 3000+ CCU at its peak.
 :::
 ::: card icon="simple-icons:roblox" card-title="Pet Tower Tycoon" class-list="bg-red-600" href="https://www.roblox.com/games/11731663131"
 A Roblox tycoon game where you can build a tower, merge pets, and evolve them into higher ones. Fully scripted by myself in ~2 weeks.
