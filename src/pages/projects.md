@@ -29,6 +29,9 @@ A challange to, based off of data of cities, populate a 3D model with cities tha
 ::: card icon="simple-icons:typescript" card-title="Custom CDN" class-list="bg-blue-500" href="https://github.com/6ixfalls/sixshx"
 A custom implementation of a CDN supporting ShareX storing files through S3.
 :::
+::: card icon="simple-icons:discord" card-title="Stock Tracker" class-list="bg-indigo-600" href="https://discord.gg/zvT6WhZKs7"
+A simple stock tracker Discord server (& bot) which automatically pulls and notifies people of new stock, currently for the provider AdvinServers.
+:::
 ::::
 
 # **Contributions**
