@@ -33,7 +33,7 @@ A custom implementation of a CDN supporting ShareX storing files through S3.
 A simple stock tracker Discord server (& bot) which automatically pulls and notifies people of new stock, currently for the provider AdvinServers.
 :::
 ::: card icon="simple-icons:railway" card-title="Railway App Templates" class-list="bg-purple-600" href="https://github.com/stars/6ixfalls/lists/railway-templates"
-A collection of app templates created for the (Railway template bounty program)[https://github.com/railwayapp/templates/wiki/Template-Bounties], including projects such as NocoDB, RabbitMQ, and Temporal deployable on Railway.
+A collection of app templates created for the Railway template bounty program, including projects such as NocoDB, RabbitMQ, and Temporal deployable on Railway.
 :::
 ::::
 
