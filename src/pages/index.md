@@ -20,7 +20,7 @@ Hey there! I'm Bryan, a full-stack and game developer with 4+ years of expertise
 ::: card icon="simple-icons:javascript" card-title="JavaScript" class-list="bg-yellow-600"
 4+ years of experience; although I mostly use TypeScript. Primarily used for websites, rarely for Discord Bots.
 :::
-::: card icon="simple-icons:java" card-title="Java" class-list="bg-red-700"
+::: card icon="fa-brands:java" card-title="Java" class-list="bg-red-700"
 2+ years of experience, primarily used for Minecraft development, including plugins and mods, primarily in Java 8.
 :::
 ::: card icon="simple-icons:vuedotjs" card-title="VUE.JS" class-list="bg-green-600"
