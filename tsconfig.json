@@ -1,0 +1,17 @@
+{
+    "include": ["./src/**/*", "vite.config.ts"],
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "esModuleInterop": false,
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "importHelpers": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "preserve",
+        "types": ["vite/client"]
+    }
+}

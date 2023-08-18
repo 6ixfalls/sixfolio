@@ -3,6 +3,7 @@ layout: blog
 topbar: false
 comments_enabled: true
 title: markdown-it demo
+description: markdown-it demo page
 ---
 # h1 Heading 8-)
 ## h2 Heading

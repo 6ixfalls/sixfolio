@@ -2,6 +2,7 @@
 layout: static
 topbar: true
 title: Projects
+description: Completed projects and works.
 ---
 # **Completed Projects**
 

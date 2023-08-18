@@ -2,6 +2,7 @@
 layout: static
 topbar: true
 title: Home
+description: Self-taught, game and software developer.
 ---
 # **Who am I**
         

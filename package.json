@@ -5,10 +5,11 @@
   "license": "GPL-3.0",
   "scripts": {
     "dev": "vite",
-    "build": "cross-env NODE_ENV=production vite build"
+    "build": "cross-env NODE_ENV=production tsc && vite build"
   },
   "dependencies": {
     "@iconify/vue": "^4.1.1",
+    "@unhead/vue": "^1.3.4",
     "animejs": "^3.2.1",
     "buffer": "^6.0.3",
     "front-matter": "^4.0.2",
@@ -27,6 +28,7 @@
     "react-parallax-tilt": "^1.7.152",
     "seedrandom": "^3.0.5",
     "twemoji": "^14.0.2",
+    "typescript": "^5.1.6",
     "veaury": "^2.3.12",
     "vue": "^3.2.38",
     "vue-router": "^4.2.4"
@@ -35,6 +37,7 @@
     "@types/animejs": "^3.1.5",
     "@types/punycode": "^2.1.0",
     "@types/seedrandom": "^3.0.5",
+    "@unhead/addons": "^1.3.4",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/compiler-sfc": "^3.2.37",
     "autoprefixer": "^10.4.8",

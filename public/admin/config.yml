@@ -26,6 +26,7 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "static" }
       - { label: "Topbar", name: "topbar", widget: "boolean", default: "true" }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "blog"
     label: "Blog"
@@ -43,4 +44,5 @@ collections:
           default: "true",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }

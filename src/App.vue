@@ -136,7 +136,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import { defineCustomElement } from "./apiCustomElement";
 import anime from "animejs";
@@ -149,7 +149,7 @@ import Card from "./components/Card.ce.vue";
 
 const range = 18;
 
-const calcValue = (a, b) => ((a / b) * range - range / 2).toFixed(1);
+const calcValue = (a, b) => (a / b) * range - range / 2;
 
 export default defineComponent({
     computed: {
@@ -176,6 +176,7 @@ export default defineComponent({
                     url: "https://discord.com/users/303173495918034945",
                 },
             },
+            scrollAnimation: null,
         };
     },
     beforeMount() {

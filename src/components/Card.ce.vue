@@ -30,7 +30,7 @@
         </div>
     </Tilt>
 </template>
-<script>
+<script lang="ts">
 import { applyReactInVue } from "veaury";
 import Tilt from "react-parallax-tilt";
 import { Icon } from "@iconify/vue";

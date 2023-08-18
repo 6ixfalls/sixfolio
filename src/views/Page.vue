@@ -1,19 +1,12 @@
 <template>
     <div id="container">
-        <div
-            id="textcontainer"
-            class="text-slate-200 break-words"
-            v-html="markdown"
-        ></div>
-        <div
-            id="comments"
-            class="py-4"
-            v-if="attributes.comments_enabled"
-        ></div>
+        <div id="textcontainer" class="text-slate-200 break-words" v-html="markdown"></div>
+        <div id="comments" class="py-4" v-if="attributes.comments_enabled"></div>
     </div>
 </template>
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
+import { useSeoMeta } from "@unhead/vue";
 import markdownIt from "markdown-it";
 import markdownItEmoji from "markdown-it-emoji";
 import markdownItAbbr from "markdown-it-abbr";
@@ -41,7 +34,7 @@ const markdown = markdownIt({
                         .value +
                     "</code></pre>"
                 );
-            } catch (__) {}
+            } catch (__) { }
         }
 
         return (
@@ -84,7 +77,7 @@ markdown.use(markdownItContainer, "card", {
         const m = token.info.trim().match(/^card\s+(.*)$/);
 
         // parse attributes from the card tag
-        const attributes = {};
+        const attributes: any = {};
         const attributeRegex = /([^\s=]+)=["']([^"']*)["']/g;
         let match;
         while ((match = attributeRegex.exec(m[1])) !== null) {
@@ -154,41 +147,73 @@ export default defineComponent({
 
             rendered = doc.body.innerHTML;
             return rendered;
+        }
+    },
+    methods: {
+        handleAttributeChange(attributes) {
+            // set heads
+            useSeoMeta({
+                title: `sixfalls - ${new URL(document.URL).pathname}`,
+                description: attributes.description,
+                ogDescription: attributes.description,
+                ogTitle: attributes.title,
+                ogImage: attributes.image,
+                ogUrl: document.URL,
+                twitterCard: "summary_large_image",
+            });
+
+            // add comments if enabled
+            if (attributes.comments_enabled) {
+                postscribe("#comments", `<script
+                    src="https://giscus.app/client.js"
+                    data-repo="6ixfalls/sixfolio"
+                    data-repo-id="R_kgDOH0g_pw"
+                    data-category="Blog"
+                    data-category-id="DIC_kwDOH0g_p84CXeJP"
+                    data-mapping="pathname"
+                    data-strict="1"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="top"
+                    data-theme="transparent_dark"
+                    data-lang="en"
+                    data-loading="lazy"
+                    crossorigin="anonymous"
+                    async
+                ><\/script>`);
+            }
         },
+        handleBodyChange(body) {
+            // linkify links properly
+            document.querySelectorAll("#textcontainer a").forEach((a: any) => {
+                a.addEventListener("click", (e) => {
+                    const href = a.attributes.href.value;
+
+                    if (
+                        !(href.startsWith("http://") || href.startsWith("https://"))
+                    ) {
+                        e.preventDefault();
+                        this.$router.push({ path: a.attributes.href.value });
+                    }
+                });
+            });
+        }
+    },
+    watch: {
+        attributes: {
+            deep: true,
+            flush: "post",
+            handler: "handleAttributeChange",
+        },
+        body: {
+            deep: true,
+            flush: "post",
+            handler: "handleBodyChange",
+        }
     },
     mounted() {
-        document.querySelectorAll("#textcontainer a").forEach((a) => {
-            a.addEventListener("click", (e) => {
-                const href = a.attributes.href.value;
-
-                if (
-                    !(href.startsWith("http://") || href.startsWith("https://"))
-                ) {
-                    e.preventDefault();
-                    this.$router.push({ path: a.attributes.href.value });
-                }
-            });
-        });
-
-        if (this.attributes.comments_enabled) {
-            postscribe("#comments", `<script
-        src="https://giscus.app/client.js"
-        data-repo="6ixfalls/sixfolio"
-        data-repo-id="R_kgDOH0g_pw"
-        data-category="Blog"
-        data-category-id="DIC_kwDOH0g_p84CXeJP"
-        data-mapping="pathname"
-        data-strict="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="transparent_dark"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async
-    ><\/script>`);
-        }
+        this.handleAttributeChange(this.attributes);
+        this.handleBodyChange(this.body);
     },
 });
 </script>

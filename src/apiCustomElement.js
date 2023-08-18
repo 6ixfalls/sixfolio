@@ -1,9 +1,14 @@
 // file deepcode ignore
-import { createVNode, defineComponent, nextTick, warn } from '@vue/runtime-core';
-import { camelize, extend, hyphenate, isArray, toNumber } from '@vue/shared';
-import HTMLParsedElement from 'html-parsed-element';
-import { hydrate, render } from '@vue/runtime-dom';
-const __DEV__ = process.env.NODE_ENV !== 'production';
+import {
+    createVNode,
+    defineComponent,
+    nextTick,
+    warn,
+} from "@vue/runtime-core";
+import { camelize, extend, hyphenate, isArray, toNumber } from "@vue/shared";
+import HTMLParsedElement from "html-parsed-element";
+import { hydrate, render } from "@vue/runtime-dom";
+const __DEV__ = process.env.NODE_ENV !== "production";
 export function defineCustomElement(options, config, hydrate) {
     const Comp = defineComponent(options);
     class VueCustomElement extends VueElement {
@@ -14,12 +19,12 @@ export function defineCustomElement(options, config, hydrate) {
     VueCustomElement.def = Comp;
     return VueCustomElement;
 }
-export const defineSSRCustomElement = ((options, config) => {
+export const defineSSRCustomElement = (options, config) => {
     // @ts-expect-error
     return defineCustomElement(options, config, hydrate);
-});
-const BaseClass = (typeof HTMLElement !== 'undefined' ? HTMLParsedElement : class {
-});
+};
+const BaseClass =
+    typeof HTMLElement !== "undefined" ? HTMLParsedElement : class { };
 export class VueElement extends BaseClass {
     constructor(_def, _props = {}, _config = {}, hydrate) {
         super();
@@ -33,22 +38,25 @@ export class VueElement extends BaseClass {
         this._connected = false;
         this._resolved = false;
         this._numberProps = null;
-        this._config = extend({
-            shadowRoot: true
-        }, this._config);
+        this._config = extend(
+            {
+                shadowRoot: true,
+            },
+            this._config
+        );
         if (this._config.shadowRoot) {
             if (this.shadowRoot && hydrate) {
                 hydrate(this._createVNode(), this._root);
-            }
-            else {
+            } else {
                 if (__DEV__ && this.shadowRoot) {
-                    warn(`Custom element has pre-rendered declarative shadow root but is not ` +
-                        `defined as hydratable. Use \`defineSSRCustomElement\`.`);
+                    warn(
+                        `Custom element has pre-rendered declarative shadow root but is not ` +
+                        `defined as hydratable. Use \`defineSSRCustomElement\`.`
+                    );
                 }
-                this.attachShadow({ mode: 'open' });
+                this.attachShadow({ mode: "open" });
             }
-        }
-        else {
+        } else {
             if (hydrate) {
                 hydrate(this._createVNode(), this._root);
             }
@@ -60,8 +68,7 @@ export class VueElement extends BaseClass {
     connectedCallback() {
         if (this._config.shadowRoot) {
             this._connect();
-        }
-        else {
+        } else {
             super.connectedCallback();
         }
     }
@@ -101,7 +108,7 @@ export class VueElement extends BaseClass {
             this._setAttr(this.attributes[i].name);
         }
         // watch future attr changes
-        new MutationObserver(mutations => {
+        new MutationObserver((mutations) => {
             for (const m of mutations) {
                 this._setAttr(m.attributeName);
             }
@@ -109,7 +116,11 @@ export class VueElement extends BaseClass {
         const resolve = (def) => {
             const { props, styles } = def;
             const hasOptions = !isArray(props);
-            const rawKeys = props ? (hasOptions ? Object.keys(props) : props) : [];
+            const rawKeys = props
+                ? hasOptions
+                    ? Object.keys(props)
+                    : props
+                : [];
             // cast Number-type props set before resolve
             let numberProps;
             // add props check to fix https://github.com/vuejs/core/issues/5326
@@ -118,14 +129,16 @@ export class VueElement extends BaseClass {
                     const opt = props[key];
                     if (opt === Number || (opt && opt.type === Number)) {
                         this._props[key] = toNumber(this._props[key]);
-                        (numberProps || (numberProps = Object.create(null)))[key] = true;
+                        (numberProps || (numberProps = Object.create(null)))[
+                            key
+                        ] = true;
                     }
                 }
             }
             this._numberProps = numberProps;
             // check if there are props set pre-upgrade or connect
             for (const key of Object.keys(this)) {
-                if (key[0] !== '_') {
+                if (key[0] !== "_") {
                     this._setProp(key, this[key], true, false);
                 }
             }
@@ -137,12 +150,14 @@ export class VueElement extends BaseClass {
                     },
                     set(val) {
                         this._setProp(key, val);
-                    }
+                    },
                 });
             }
             // replace slot
             if (!this._config.shadowRoot) {
-                this._slots = Array.from(this.children).map(n => n.cloneNode(true));
+                this._slots = Array.from(this.children).map((n) =>
+                    n.cloneNode(true)
+                );
                 this.replaceChildren();
             }
             // apply CSS
@@ -153,8 +168,7 @@ export class VueElement extends BaseClass {
         const asyncDef = this._def.__asyncLoader;
         if (asyncDef) {
             asyncDef().then(resolve);
-        }
-        else {
+        } else {
             resolve(this._def);
         }
     }
@@ -183,12 +197,10 @@ export class VueElement extends BaseClass {
             // reflect
             if (shouldReflect) {
                 if (val === true) {
-                    this.setAttribute(hyphenate(key), '');
-                }
-                else if (typeof val === 'string' || typeof val === 'number') {
-                    this.setAttribute(hyphenate(key), val + '');
-                }
-                else if (!val) {
+                    this.setAttribute(hyphenate(key), "");
+                } else if (typeof val === "string" || typeof val === "number") {
+                    this.setAttribute(hyphenate(key), val + "");
+                } else if (!val) {
                     this.removeAttribute(hyphenate(key));
                 }
             }
@@ -204,37 +216,41 @@ export class VueElement extends BaseClass {
         if (!this._config.shadowRoot) {
             childs = Object.fromEntries(
                 this._slots.map((slot) => [
-                    slot.slot?.length ? slot.slot : 'default',
+                    slot.slot?.length ? slot.slot : "default",
                     () => {
                         const toObj = (a) => {
-                            const res = {}
+                            const res = {};
                             for (let i = 0, l = a.length; i < l; i++) {
-                                const attr = a[i]
-                                res[attr.nodeName] = attr.nodeValue
+                                const attr = a[i];
+                                res[attr.nodeName] = attr.nodeValue;
                             }
-                            return res
-                        }
+                            return res;
+                        };
 
-                        const attrs = slot.attributes ? toObj(slot.attributes) : {}
-                        attrs.innerHTML = slot.innerHTML
-                        return createVNode(slot.tagName, attrs)
-                    }
+                        const attrs = slot.attributes
+                            ? toObj(slot.attributes)
+                            : {};
+                        attrs.innerHTML = slot.innerHTML;
+                        return createVNode(slot.tagName, attrs);
+                    },
                 ])
-            )
+            );
         }
         const vnode = createVNode(this._def, extend({}, this._props), childs);
         if (!this._instance) {
-            vnode.ce = instance => {
+            vnode.ce = (instance) => {
                 this._instance = instance;
                 if (this._config.shadowRoot) {
                     instance.isCE = true;
                 }
                 // HMR
                 if (__DEV__) {
-                    instance.ceReload = newStyles => {
+                    instance.ceReload = (newStyles) => {
                         // always reset styles
                         if (this._styles) {
-                            this._styles.forEach(s => this._root.removeChild(s));
+                            this._styles.forEach((s) =>
+                                this._root.removeChild(s)
+                            );
                             this._styles.length = 0;
                         }
                         this._applyStyles(newStyles);
@@ -249,14 +265,17 @@ export class VueElement extends BaseClass {
                 }
                 // intercept emit
                 instance.emit = (event, ...args) => {
-                    this.dispatchEvent(new CustomEvent(event, {
-                        detail: args
-                    }));
+                    this.dispatchEvent(
+                        new CustomEvent(event, {
+                            detail: args,
+                        })
+                    );
                 };
                 // locate nearest Vue custom element parent for provide/inject
                 let parent = this;
-                while ((parent =
-                    parent && (parent.parentNode || parent.host))) {
+                while (
+                    (parent = parent && (parent.parentNode || parent.host))
+                ) {
                     if (parent instanceof VueElement) {
                         instance.parent = parent._instance;
                         break;
@@ -268,13 +287,12 @@ export class VueElement extends BaseClass {
     }
     _applyStyles(styles) {
         if (styles) {
-            styles.forEach(css => {
-                const s = document.createElement('style');
+            styles.forEach((css) => {
+                const s = document.createElement("style");
                 s.textContent = css;
                 this._root.appendChild(s);
                 // record for HMR
                 if (__DEV__) {
-                    ;
                     (this._styles || (this._styles = [])).push(s);
                 }
             });
