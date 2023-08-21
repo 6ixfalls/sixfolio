@@ -31,6 +31,7 @@ import { camelize, extend, hyphenate, isArray, toNumber } from "@vue/shared";
 import HTMLParsedElement from "html-parsed-element";
 import { hydrate, render } from "@vue/runtime-dom";
 
+//@ts-ignore ...
 const __DEV__ = process.env.NODE_ENV !== "production";
 
 export interface DefineCustomElementConfig {
