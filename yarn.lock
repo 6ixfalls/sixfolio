@@ -1168,10 +1168,10 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-parallax-tilt@^1.7.152:
-  version "1.7.152"
-  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.7.152.tgz#1fc6c7ed582fb7d35ba1455b18fbdb9d58f492f0"
-  integrity sha512-lmqZtp/AVG/vsEu1YV4oMlPCUf74JTMljg1/TFL65EmFXrcYp61f1ISPyfZknxAvQKxvQPoo7I+XL0idEOk6Tg==
+react-parallax-tilt@^1.7.163:
+  version "1.7.163"
+  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.7.163.tgz#a03b57f294c345be2e6ec2b4c73f5c81c911d239"
+  integrity sha512-2hqXmH4MPGxCABOOza44WDQH24cpId2xsvDhRi/bXEtqOdSWZHFLa03KatraW2sYxP8J7W3X85o7/X480msJRg==
 
 react@^18.2.0:
   version "18.2.0"
