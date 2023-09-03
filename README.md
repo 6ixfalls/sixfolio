@@ -1,6 +1,6 @@
 # sixfolio
 
-sixfolio is a modern personal portfolio website built using Vite, TailwindCSS, VueJS, and Decap CMS. It is designed to showcase your skills, projects, and achievements in a clean and visually appealing manner.
+sixfolio is a modern personal portfolio website built using TailwindCSS, VueJS, NuxtJS and Decap CMS. It is designed to showcase your skills, projects, and achievements in a clean and visually appealing manner.
 
 ## Features
 
