@@ -33,7 +33,7 @@
     <div ref="intro" class="fixed w-screen h-screen flex items-center justify-center text-white select-none"
       :class="onIntro || !scrollAnimation!.completed ? '' : 'hidden'" v-if="$route.path === '/'">
       <div ref="moon" class="absolute w-32 top-[10%] right-[10%]">
-        <img src="/img/mooncresc.png" class="animate-moon" alt="moon crescent" />
+        <NuxtImg src="/img/mooncresc.png" class="animate-moon" alt="moon crescent" />
       </div>
       <div ref="starcontainer" class="fixed w-screen h-screen flex items-center justify-center">
         <div v-for="n in Math.floor(windowWidth / 10)" :key="n"

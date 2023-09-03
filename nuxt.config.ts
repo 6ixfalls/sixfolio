@@ -6,6 +6,7 @@ export default defineNuxtConfig({
         "@nuxtjs/tailwindcss",
         "@nuxtjs/google-fonts",
         "nuxt-icon",
+        "@nuxt/image",
     ],
     imports: {
         presets: [
@@ -24,6 +25,7 @@ export default defineNuxtConfig({
         families: {
             Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
             Karla: [100, 200, 300, 400, 500, 600, 700, 800],
+            Lora: [600],
         },
     },
     app: {
@@ -35,6 +37,14 @@ export default defineNuxtConfig({
                     href: "https://dcdn.dstn.to/avatars/303173495918034945",
                 },
             ],
+        },
+    },
+    content: {
+        highlight: {
+            theme: "github-dark",
+        },
+        markdown: {
+            remarkPlugins: ["remark-twemoji", "remark-breaks"],
         },
     },
 });

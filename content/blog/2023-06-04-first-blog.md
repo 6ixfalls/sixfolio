@@ -103,7 +103,7 @@ Sample text here...
 
 Syntax highlighting
 
-``` js
+```js [code.js]
 var foo = function (bar) {
   return bar++;
 };
