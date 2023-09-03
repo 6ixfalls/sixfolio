@@ -1,0 +1,140 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer utilities {
+    .icon-2xs {
+        font-size: 0.625em;
+    }
+    .icon-xs {
+        font-size: 0.75em;
+    }
+    .icon-sm {
+        font-size: 0.875em;
+    }
+    .icon-md {
+        font-size: 1em;
+    }
+    .icon-lg {
+        font-size: 1.25em;
+    }
+    .icon-xl {
+        font-size: 1.5em;
+    }
+    .icon-2xl {
+        font-size: 2em;
+    }
+}
+
+:root {
+    color-scheme: dark;
+    --star-flicker-start: 1s;
+    scrollbar-gutter: stable;
+    @apply bg-neutral-900;
+}
+
+h1 {
+    @apply text-2xl;
+}
+h2 {
+    @apply text-xl;
+}
+h3 {
+    @apply text-lg;
+}
+a {
+    @apply text-blue-600;
+}
+pre {
+    word-wrap: break-word;
+    @apply whitespace-normal block p-3 mx-0 mb-2.5 text-sm break-all !bg-neutral-800 border border-neutral-600 rounded;
+}
+
+.emoji {
+    @apply h-[1.2em] inline;
+}
+
+.blockquote {
+    @apply inline-flex flex-row flex-wrap px-2.5 py-1 mb-5 border-0 before:block before:bg-neutral-200 before:dark:bg-neutral-800 before:w-[4px] before:min-w-[4px] before:max-w-[4px] before:rounded-full before:mr-3;
+}
+
+break {
+    @apply basis-full h-0 w-0 overflow-hidden;
+}
+
+ul,
+ol {
+    text-align: -webkit-match-parent;
+    list-style-type: inherit;
+    box-sizing: border-box;
+    @apply mt-0 mb-2.5 block pl-6;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    @apply list-item;
+}
+
+code {
+    @apply px-0.5 py-1 text-neutral-200 bg-neutral-800 rounded text-[90%];
+}
+
+pre code {
+    font-size: inherit;
+    @apply p-0 text-inherit whitespace-pre-wrap bg-transparent rounded-none;
+}
+
+.blockquote p {
+    @apply mb-2.5;
+}
+
+table {
+    box-sizing: border-box;
+    @apply w-full max-w-full mb-5 border-spacing-0 border-collapse;
+}
+
+table > caption + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > th,
+table > thead:first-child > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > td {
+    @apply border-t-0;
+}
+
+table > tbody > tr:nth-child(even) > td,
+table > tbody > tr:nth-child(even) > th {
+    @apply bg-neutral-800;
+}
+
+table > tbody > tr:nth-child(odd) > td,
+table > tbody > tr:nth-child(odd) > th {
+    @apply bg-transparent;
+}
+
+table > thead > tr {
+    @apply align-bottom border-b-2 border-neutral-300 dark:border-neutral-700;
+}
+
+th {
+    text-align: left;
+}
+
+td {
+    @apply p-2 border-t border-neutral-300 dark:border-neutral-700;
+}
+
+hr {
+    @apply my-5 border-0 border-t border-neutral-200 dark:border-neutral-800;
+}
+
+#md-card-container {
+    @apply md:grid lg:grid-cols-1 2xl:grid-cols-2 desktop:grid-cols-3 gap-8 my-8;
+}
+
+#md-card-container > a {
+    @apply no-underline text-inherit;
+}
