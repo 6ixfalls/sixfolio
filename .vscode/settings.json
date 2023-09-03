@@ -1,6 +1,0 @@
-{
-    "css.lint.unknownAtRules": "ignore",
-    "files.exclude": {
-        ".vscode": true
-    }
-}

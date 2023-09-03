@@ -30,6 +30,7 @@
     color-scheme: dark;
     --star-flicker-start: 1s;
     scrollbar-gutter: stable;
+    @apply bg-neutral-900;
 }
 
 h1 {
