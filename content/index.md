@@ -50,3 +50,5 @@ Twitter: [6ixfalls](https://twitter.com/6ixfalls "6ixfalls")
 Github: [6ixfalls](https://github.com/6ixfalls "6ixfalls")
 
 I look forward to working with you!
+
+<a rel="me" href="https://mastodon.social/@sixfalls" class="hidden"></a>
