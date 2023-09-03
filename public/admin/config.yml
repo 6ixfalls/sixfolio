@@ -1,0 +1,58 @@
+backend:
+  name: github
+  repo: 6ixfalls/sixfolio
+  branch: master
+  site_url: https://sixfal.ls/
+  base_url: https://sixfal.ls/
+  auth_endpoint: admin/auth
+  cms_label_prefix: cms/
+
+media_folder: "public/img/uploads"
+public_folder: "/img/uploads"
+site_url: https://sixfal.ls/
+display_url: https://sixfal.ls/
+logo_url: https://dcdn.dstn.to/avatars/303173495918034945
+show_preview_links: true
+publish_mode: editorial_workflow
+
+collections:
+  - name: "static"
+    label: "Static"
+    folder: "content"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "static" }
+      - {
+          label: "Navigation",
+          name: "navigation",
+          widget: "boolean",
+          default: "true",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "blog/{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - {
+          label: "Navigation",
+          name: "navigation",
+          widget: "boolean",
+          default: "false",
+        }
+      - {
+          label: "Comments",
+          name: "comments_enabled",
+          widget: "boolean",
+          default: "true",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
