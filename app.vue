@@ -19,6 +19,13 @@
         </a>
       </div>
     </div>
+    <ClientOnly>
+      <template #fallback>
+        <div class="h-screen w-screen fixed z-50 bg-neutral-900 flex justify-center items-center">
+          <Icon name="ant-design:loading-outlined" class="icon-xl z-[60] animate-spin" />
+        </div>
+      </template>
+    </ClientOnly>
     <article ref="content" :class="isClient && 'hidden'">
       <NuxtPage
         class="mx-8 md:mx-12 lg:w-1/2 lg:mx-auto mt-24 pb-8 selection:bg-neutral-300 selection:text-neutral-700" />
@@ -26,7 +33,7 @@
     <div ref="intro" class="fixed w-screen h-screen flex items-center justify-center text-white select-none"
       :class="onIntro || !scrollAnimation!.completed ? '' : 'hidden'" v-if="$route.path === '/'">
       <div ref="moon" class="absolute w-32 top-[10%] right-[10%]">
-        <img src="/img/mooncresc.png" class="animate-moon" />
+        <img src="/img/mooncresc.png" class="animate-moon" alt="moon crescent" />
       </div>
       <div ref="starcontainer" class="fixed w-screen h-screen flex items-center justify-center">
         <div v-for="n in Math.floor(windowWidth / 10)" :key="n"
