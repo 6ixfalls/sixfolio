@@ -9,6 +9,7 @@ export default defineNuxtConfig({
         "@nuxt/image",
         "nuxt-og-image",
         "nuxt-link-checker",
+        "nuxt-simple-robots",
     ],
     imports: {
         presets: [
@@ -61,5 +62,15 @@ export default defineNuxtConfig({
     },
     linkChecker: {
         failOnError: true,
+    },
+    nitro: {
+        prerender: {
+            crawlLinks: true,
+            routes: ["/_ipx/h_512/img/hu_tao_qixia.jpg", "/robots.txt"],
+        },
+    },
+    robots: {
+        // disallow admin cms route
+        disallow: ["/admin"],
     },
 });
