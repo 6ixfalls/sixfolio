@@ -1,0 +1,4 @@
+{
+  "origins": ["https://sixfal.ls", "https://www.sixfal.ls", "https://sixfalls.me", "https://www.sixfalls.me"],
+  "originsRegex": ["http://localhost:[0-9]+", "https://([A-z0-9]|-)*\\.sixfolio\\.pages\\.dev"]
+}
