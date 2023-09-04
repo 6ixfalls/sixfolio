@@ -39,6 +39,9 @@ export default defineNuxtConfig({
                     href: "https://dcdn.dstn.to/avatars/303173495918034945",
                 },
             ],
+            htmlAttrs: {
+                lang: "en",
+            },
         },
     },
     content: {
