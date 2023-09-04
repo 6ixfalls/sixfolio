@@ -2,6 +2,17 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require("tailwindcss/plugin")
 
 module.exports = {
+  content: [
+    "./content/**/*.{md,json}",
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./modules/**/*.{js,ts}",
+    "./assets/css/**/*.css",
+    "./nuxt.config.{js,ts}",
+    "./app.vue",
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -30,6 +41,9 @@ module.exports = {
       },
       screens: {
         'desktop': '2048px',
+      },
+      aspectRatio: {
+        'og': '40 / 21'
       }
     },
     fontFamily: {

@@ -7,6 +7,8 @@ export default defineNuxtConfig({
         "@nuxtjs/google-fonts",
         "nuxt-icon",
         "@nuxt/image",
+        "nuxt-og-image",
+        "nuxt-link-checker",
     ],
     imports: {
         presets: [
@@ -46,5 +48,14 @@ export default defineNuxtConfig({
         markdown: {
             remarkPlugins: ["remark-twemoji", "remark-breaks"],
         },
+        navigation: {
+            fields: ["layout_order"],
+        },
+    },
+    site: {
+        url: "https://sixfal.ls",
+    },
+    linkChecker: {
+        failOnError: true,
     },
 });

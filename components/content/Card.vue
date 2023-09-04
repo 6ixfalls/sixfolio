@@ -8,8 +8,7 @@
                         <Icon :name="icon!" class="icon-2xl" color="white"></Icon>
                     </div>
                     <div class="w-full p-4">
-                        <span class="text-lg font-semibold">{{ cardTitle }}</span>
-                        <br />
+                        <div class="text-lg font-semibold mb-0.5">{{ cardTitle }}</div>
                         <ContentSlot />
                     </div>
                 </div>

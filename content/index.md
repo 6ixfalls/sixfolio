@@ -1,6 +1,7 @@
 ---
 layout: static
 title: Home
+layout_order: 0
 description: Self-taught, game and software developer.
 ---
 # **Who am I**

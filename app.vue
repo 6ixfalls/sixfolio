@@ -73,7 +73,10 @@ import seedrandom from "seedrandom";
 
 const isClient = ref(!!process.client);
 
-const { data: pages } = await useAsyncData('navigation', () => fetchContentNavigation());
+const { data: pages } = await useAsyncData('navigation', () => fetchContentNavigation(
+  queryContent("/").sort({ layout_order: 1 })
+));
+pages.value?.sort((a, b) => a.layout_order - b.layout_order);
 const icons = {
   roblox: {
     name: "simple-icons:roblox",

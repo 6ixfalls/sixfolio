@@ -1,6 +1,7 @@
 ---
 layout: static
 title: Projects
+layout_order: 1
 description: Completed projects and works.
 ---
 # **Completed Projects**
@@ -33,7 +34,7 @@ There are infinite possibilities for what people can do. Here are some of my pro
     A simple stock tracker Discord server (& bot) which automatically pulls and notifies people of new stock, currently for the provider AdvinServers.
     ::
     ::card{icon="simple-icons:railway" card-title="Railway App Templates" class-list="bg-purple-600" href="https://github.com/stars/6ixfalls/lists/railway-templates"}
-    A collection of app templates created for the Railway template bounty program, including projects such as NocoDB, RabbitMQ, and Temporal deployable on Railway.
+    A collection of app templates created for the Railway bounty program, including projects such as NocoDB, RabbitMQ, and Temporal.
     ::
     ::card{icon="simple-icons:typescript" card-title="Skilify" class-list="bg-blue-500" href="https://github.com/skilify/skilify"}
     A 2-day second place Project: Empower hackathon winner, Skilify is a platform for students to network, exchange skills, and tutor.

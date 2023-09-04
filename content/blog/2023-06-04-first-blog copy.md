@@ -1,10 +1,9 @@
 ---
 layout: blog
 comments_enabled: true
-title: markdown-it demo
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+title: markdown-it demo2
+description: Cool desc
+image: /img/hu_tao_qixia.jpg
 date: 2023-06-04T02:47:27.189Z
 ---
 # h1 Heading 8-)
