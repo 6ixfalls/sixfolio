@@ -53,5 +53,8 @@
         }
       }
     }
+  },
+  "resolutions": {
+    "nuxt-og-image/inline-css/extract-css/href-content/remote-content/superagent-proxy/proxy-agent": "^6.3.0"
   }
 }
