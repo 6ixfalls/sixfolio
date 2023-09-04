@@ -1,12 +1,12 @@
 <template>
     <div id="container">
         <div id="textcontainer" class="text-slate-200 break-words">
-            <div v-if="page?.layout === 'blog'">
-                <span>{{ new Date(page.date).toLocaleDateString('en-US', {
+            <div v-if="pageRef?.layout === 'blog'">
+                <span>{{ new Date(pageRef.date).toLocaleDateString('en-US', {
                     year: 'numeric', month: 'long', day:
                         'numeric'
                 }) }}</span>
-                <h1 class="text-4xl font-semibold mb-4">{{ page?.title }}</h1>
+                <h1 class="text-4xl font-semibold mb-4">{{ pageRef.title }}</h1>
             </div>
 
             <ContentDoc :head="false">
@@ -27,7 +27,7 @@
         <div id="comments" class="py-4">
             <Giscus repo="6ixfalls/sixfolio" repoId="R_kgDOH0g_pw" category="Blog" categoryId="DIC_kwDOH0g_p84CXeJP"
                 mapping="pathname" strict="1" reactionsEnabled="1" emitMetadata="0" inputPosition="top"
-                theme="transparent_dark" lang="en" loading="lazy" v-if="page?.comments_enabled" />
+                theme="transparent_dark" lang="en" loading="lazy" v-if="pageRef?.comments_enabled" />
         </div>
     </div>
 </template>
@@ -39,8 +39,10 @@ const route = useRoute();
 useHead({
     title: `sixfalls - ${route.path}`
 });
-const { data: page } = await useAsyncData('my-page', queryContent(route.path).findOne);
+let { data: page } = await useAsyncData('my-page', queryContent(route.path).findOne);
+const pageRef = ref(page.value); // fixes reactivity issue
 if (page.value) {
+    pageRef.value = page.value;
     useSeoMeta({
         ogTitle: route.path === "/" ? "sixfalls" : page.value.title,
         description: page.value.description,
