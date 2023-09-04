@@ -54,6 +54,7 @@ export default defineNuxtConfig({
         navigation: {
             fields: ["layout_order"],
         },
+        documentDriven: true,
     },
     site: {
         url: "https://sixfal.ls",
