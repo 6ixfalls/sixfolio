@@ -15,7 +15,7 @@ useHead({
     title: `sixfalls - /blog`
 });
 const { data: articles } = await useAsyncData('articles', queryContent('/blog/').only(["_extension", "_path", "title", "description", "image", "date"]).where({ _extension: { $in: ["md"] } }).sort({ date: 1 }).find);
-const { data: page } = await useAsyncData('my-page', queryContent(route.path).findOne);
+const { data: page } = await useAsyncData('blog-page', queryContent(route.path).findOne, { watch: [route] });
 if (page.value) {
     useSeoMeta({
         ogTitle: page.value.title,
