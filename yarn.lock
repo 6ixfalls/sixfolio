@@ -1731,10 +1731,10 @@
     "@tufjs/canonical-json" "2.0.0"
     minimatch "^9.0.3"
 
-"@types/animejs@^3.1.7":
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/@types/animejs/-/animejs-3.1.7.tgz#4d9b23fff04b52e755119625a6087e2bc024527a"
-  integrity sha512-kFSyjM+fLo3oE9noWEtUvF82ttN8fTrKohiEMIrSzEzEjnsCmtO0rBCUQBlSPEb2w8vfN+v4/Zo0tK21Bgmq4g==
+"@types/animejs@^3.1.8":
+  version "3.1.8"
+  resolved "https://registry.yarnpkg.com/@types/animejs/-/animejs-3.1.8.tgz#524203d7b3cf2ca7329aa917a11a0fdc5f2e28bb"
+  integrity sha512-jBMAq/l14WKPrKGoSbeVBqT94BOwikQ6V3F63K/rduUE/HE/zQ6qFEhUoISyUm+Yg7qdRYbrToJ04mKHRtybtw==
 
 "@types/debug@^4.0.0":
   version "4.1.8"
