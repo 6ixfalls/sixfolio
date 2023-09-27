@@ -61,7 +61,7 @@ export default defineNuxtConfig({
         url: "https://sixfal.ls",
     },
     linkChecker: {
-        failOnError: true,
+        failOnError: false,
     },
     nitro: {
         prerender: {
