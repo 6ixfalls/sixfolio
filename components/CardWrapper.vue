@@ -1,7 +1,6 @@
 <template>
     <ClientOnly fallbackTag="div">
-        <Tilt :transitionSpeed="500" :tiltMaxAngleX="16" :tiltMaxAngleY="16" :scale="1.07" :tiltReverse="true"
-            :glareEnable="true" glareBorderRadius="0.25rem" :glareMaxOpacity="0.17">
+        <Tilt v-bind="$attrs">
             <slot />
         </Tilt>
         <template #fallback>

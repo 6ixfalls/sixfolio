@@ -1,6 +1,7 @@
 <template>
     <OptionalLink :href="path">
-        <CardWrapper>
+        <CardWrapper :transitionSpeed="500" :tiltMaxAngleX="8" :tiltMaxAngleY="8" :scale="1.06" :tiltReverse="true"
+            :glareEnable="true" glareBorderRadius="0.25rem" :glareMaxOpacity="0.17">
             <div ref="wrapper" class="w-full">
                 <div ref="movement" id="movement"
                     class="w-full h-full rounded bg-neutral-800 shadow-xl overflow-hidden flex flex-col">
