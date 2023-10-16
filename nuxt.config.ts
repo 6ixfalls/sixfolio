@@ -66,7 +66,7 @@ export default defineNuxtConfig({
     nitro: {
         prerender: {
             crawlLinks: true,
-            routes: ["/_ipx/h_1024/img/hu_tao_qixia.jpg", "/robots.txt"],
+            routes: ["/_ipx/h_512/img/hu_tao_qixia.jpg", "/_ipx/h_1024/img/hu_tao_qixia.jpg", "/robots.txt"],
         },
     },
     robots: {
