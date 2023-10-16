@@ -12,7 +12,8 @@
 const site = useSiteConfig();
 const route = useRoute();
 useHead({
-    title: `sixfalls - /blog`
+    title: `sixfalls - /blog`,
+    link: [{ rel: 'canonical', href: `https://sixfal.ls${route.path}` }]
 });
 const { data: articles } = await useAsyncData('articles', queryContent('/blog/').only(["_extension", "_path", "title", "description", "image", "date"]).where({ _extension: { $in: ["md"] } }).sort({ date: 1 }).find);
 const { data: page } = await useAsyncData('blog-page', queryContent(route.path).findOne, { watch: [route] });
