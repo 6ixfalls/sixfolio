@@ -2,7 +2,7 @@
 layout: static
 title: Projects
 layout_order: 1
-navigation: false
+navigation: true
 description: Completed projects and works.
 ---
 # **Completed Projects**
