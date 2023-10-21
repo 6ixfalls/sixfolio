@@ -2,6 +2,7 @@
 layout: static
 title: Projects
 layout_order: 1
+navigation: false
 description: Completed projects and works.
 ---
 # **Completed Projects**
@@ -38,6 +39,9 @@ There are infinite possibilities for what people can do. Here are some of my pro
     ::
     ::card{icon="simple-icons:typescript" card-title="Skilify" class-list="bg-blue-500" href="https://github.com/skilify/skilify"}
     A 2-day second place Project: Empower hackathon winner, Skilify is a platform for students to network, exchange skills, and tutor.
+    ::
+    ::card{icon="carbon:hybrid-networking-alt" card-title="dn42" class-list="bg-gray-500" href="https://taonet.sixfal.ls"}
+    A member of the decentralized VPN network dn42, utilizing technologies used in the Internet such as BGP with bird2 and Wireguard.
     ::
 ::
 
