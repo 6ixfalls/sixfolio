@@ -1550,10 +1550,10 @@
     "@tufjs/canonical-json" "2.0.0"
     minimatch "^9.0.3"
 
-"@types/animejs@^3.1.7":
-  version "3.1.8"
-  resolved "https://registry.yarnpkg.com/@types/animejs/-/animejs-3.1.8.tgz#524203d7b3cf2ca7329aa917a11a0fdc5f2e28bb"
-  integrity sha512-jBMAq/l14WKPrKGoSbeVBqT94BOwikQ6V3F63K/rduUE/HE/zQ6qFEhUoISyUm+Yg7qdRYbrToJ04mKHRtybtw==
+"@types/animejs@^3.1.11":
+  version "3.1.11"
+  resolved "https://registry.yarnpkg.com/@types/animejs/-/animejs-3.1.11.tgz#15a29bcda3238164500e7608e788ef1044212798"
+  integrity sha512-BIVx60G/eflyqdeKBL4+gZ3L+A0afeo11wo6FpX66bpSUQuI6roei5gYbFaGjbzawOo6hrUVPoDSfS6lwsgn8A==
 
 "@types/debug@^4.0.0":
   version "4.1.9"
