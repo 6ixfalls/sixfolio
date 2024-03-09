@@ -43,6 +43,9 @@ There are infinite possibilities for what people can do. Here are some of my pro
     ::card{icon="carbon:hybrid-networking-alt" card-title="dn42" class-list="bg-gray-500" href="https://taonet.sixfal.ls"}
     A member of the decentralized VPN network dn42, utilizing technologies used in the Internet such as BGP with bird2 and Wireguard.
     ::
+    ::card{icon="simple-icons:typescript" card-title="RoGold Ultimate" class-list="bg-blue-500" href="https://rogold.live"}
+    Currently working at RoGold as a software developer, creating new features, bug fixes, and more for the RoGold Ultimate extension.
+    ::
 ::
 
 # **Contributions**
