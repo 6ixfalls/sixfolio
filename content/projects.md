@@ -7,7 +7,7 @@ description: Completed projects and works.
 ---
 # **Completed Projects**
 
-There are infinite possibilities for what people can do. Here are some of my projects that I've completed. Many of my projects have been either done in private, or through commissions, which can be provided on [request](/ "Home").
+Here are some of the projects that I've completed. Many of my projects have been either done in private, or through commissions, which can be provided on [request](/ "Home").
 
 ::container
     ::card{icon="simple-icons:roblox" card-title="Grimace" class-list="bg-red-600" href="https://www.roblox.com/games/13896062842"}
@@ -44,7 +44,10 @@ There are infinite possibilities for what people can do. Here are some of my pro
     A member of the decentralized VPN network dn42, utilizing technologies used in the Internet such as BGP with bird2 and Wireguard.
     ::
     ::card{icon="simple-icons:typescript" card-title="RoGold Ultimate" class-list="bg-blue-500" href="https://rogold.live"}
-    Currently working at RoGold as a software developer, creating new features, bug fixes, and more for the RoGold Ultimate extension.
+    Worked at RoGold as a software developer, creating new features, bug fixes, and more for the RoGold Ultimate extension.
+    ::
+    ::card{icon="mdi:internet" card-title="TaoNet Cloud" class-list="bg-red-500" href="https://taonet.work"}
+    Providing cloud hosting services through a fully custom-built stack, with BGP over the internet with AS40776.
     ::
 ::
 
