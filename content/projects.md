@@ -47,7 +47,7 @@ Here are some of the projects that I've completed. Many of my projects have been
     Worked at RoGold as a software developer, creating new features, bug fixes, and more for the RoGold Ultimate extension.
     ::
     ::card{icon="mdi:internet" card-title="TaoNet Cloud" class-list="bg-red-500" href="https://taonet.work"}
-    Providing cloud hosting services through a fully custom-built stack, with BGP over the internet with AS40776.
+    Providing cloud hosting services through a fully custom-built stack with BGP over the internet as AS40776.
     ::
 ::
 
