@@ -54,8 +54,7 @@
         <div ref="name" class="font-bold text-5xl rotate-y-45 translate-z-8">
           sixfalls
         </div>
-        <span ref="desc" class="font-text text-3xl rotate-y-45 translate-z-5">Self-taught, game and software
-          developer.</span>
+        <span ref="desc" class="font-text text-3xl rotate-y-45 translate-z-5">Software engineer creating pleasant experiences.</span>
       </div>
       <div ref="scroll"
         class="absolute bottom-12 supports-[top:100svh]:!bottom-auto animate-bounce drop-shadow-[0_1px_2px_rgb(150_150_150)]"
