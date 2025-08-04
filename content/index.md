@@ -2,47 +2,37 @@
 layout: static
 title: Home
 layout_order: 0
-description: Self-taught, game and software developer.
+navigation: false
+description: Software engineer creating pleasant experiences.
 ---
 # **Who am I**
         
-Hey there! I'm Bryan, a full-stack and game developer with 4+ years of expertise in Luau and JavaScript. I create games, websites, and software.
- I also work on commissions and part-time work. I've worked with several Roblox development studios as well as developing websites and bots. 
- I'm also enthusiastic about creating user interfaces that are fluid, clear, and simple to use and understand, as well as creating games that are enjoyable to play and provide a one-of-a-kind experience.
+Hey there! I'm Bryan, a full-stack web and game developer with more than 6 years of expertise in TypeScript and Lua. I actively create games, websites, and software. I'm enthusiastic about creating experiences that are fluid, clear, and simple to use and understand. Read below to find what technologies I use, or click Projects above to follow my journey and find out what I've been tinkering with.
 
 # **Technology**
 ::container
+    ::card{icon="simple-icons:typescript" card-title="TypeScript/JavaScript" class-list="bg-blue-500"}
+    5 years of experience creating websites and bots, as well as Roblox games with roblox-ts.
+    ::
     ::card{icon="simple-icons:lua" card-title="Luau" class-list="bg-blue-500"}
-    5+ years of experience with Lua and Luau on Roblox. Published multiple games on Roblox; primary game platform currently.
-    ::
-    ::card{icon="simple-icons:typescript" card-title="TypeScript" class-list="bg-blue-500"}
-    3+ years of experience, primarily focused on Discord Bots and a few programs. Most used language outside of Lua.
-    ::
-    ::card{icon="simple-icons:javascript" card-title="JavaScript" class-list="bg-yellow-600"}
-    4+ years of experience; although I mostly use TypeScript. Primarily used for websites, rarely for Discord Bots.
+    7 years of experience with Lua and Luau on Roblox. Published multiple games on Roblox, my primary game platform.
     ::
     ::card{icon="fa-brands:java" card-title="Java" class-list="bg-red-700"}
-    2+ years of experience, primarily used for Minecraft development, including plugins and mods, primarily in Java 8.
-    ::
-    ::card{icon="simple-icons:vuedotjs" card-title="VUE.JS" class-list="bg-green-600"}
-    ~1 year of experience, used alongside Vite and Tailwind for website design, such as my portfolio.
+    4 years of experience, used both for Minecraft development, such as plugins and mods, and other projects.
     ::
     ::card{icon="simple-icons:linux" card-title="Linux" class-list="bg-blue-900"}
-    3+ years of personal sysadmin experience, managing my own servers and creating software for personal hosting use.
+    5 years of personal sysadmin experience and shell knowledge through managing servers and writing scripts.
     ::
     ::card{icon="simple-icons:docker" card-title="Docker" class-list="bg-blue-900"}
-    3+ years of Docker management, including Dockerfiles and docker-compose to easily manage numerous services.
+    5 years of Docker experience through Dockerfiles, Docker Compose, and Kubernetes to deploy containerized images.
     ::
     ::card{icon="simple-icons:kubernetes" card-title="Kubernetes" class-list="bg-blue-900"}
-    ~4 months of experience, using Rancher, Kubernetes and k3s to deploy highly available services, as well as networking.
-    ::
-    ::card{icon="simple-icons:proxmox" card-title="Proxmox" class-list="bg-amber-500"}
-    ~5 months of experience, using Proxmox to virtualize machines for a homelab and Kubernetes cluster.
+    2 years of experience with Talos, k3s, Kubernetes, and GitOps to deploy projects in a highly available manner.
     ::
 ::
 
 # **Contact**
-You can find me on the following platforms. I'm most active on Discord, but I'm also active on Twitter and Github.
+You can find me on the following platforms:
 
 Discord: [sixfalls](https://discord.com/users/303173495918034945 "sixfalls")
 
