@@ -2,7 +2,6 @@
 layout: static
 title: Home
 layout_order: 0
-navigation: false
 description: Software engineer creating pleasant experiences.
 ---
 # **Who am I**
