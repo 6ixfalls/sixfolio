@@ -2,15 +2,15 @@ backend:
   name: github
   repo: 6ixfalls/sixfolio
   branch: master
-  site_url: https://sixfal.ls/
-  base_url: https://sixfal.ls/
+  site_url: https://sixfalls.me/
+  base_url: https://sixfalls.me/
   auth_endpoint: admin/auth
   cms_label_prefix: cms/
 
 media_folder: "public/img/uploads"
 public_folder: "/img/uploads"
-site_url: https://sixfal.ls/
-display_url: https://sixfal.ls/
+site_url: https://sixfalls.me/
+display_url: https://sixfalls.me/
 logo_url: https://dcdn.dstn.to/avatars/303173495918034945
 show_preview_links: true
 publish_mode: editorial_workflow

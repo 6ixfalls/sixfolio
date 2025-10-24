@@ -24,7 +24,7 @@ const site = useSiteConfig();
 const route = useRoute();
 useHead({
     title: `sixfalls - ${route.path}`,
-    link: [{ rel: 'canonical', href: `https://sixfal.ls${route.path}` }]
+    link: [{ rel: 'canonical', href: `https://sixfalls.me${route.path}` }]
 });
 const { page } = useContent();
 if (page.value) {

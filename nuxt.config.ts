@@ -58,7 +58,7 @@ export default defineNuxtConfig({
         documentDriven: true,
     },
     site: {
-        url: "https://sixfal.ls",
+        url: "https://sixfalls.me",
     },
     linkChecker: {
         failOnError: false,
