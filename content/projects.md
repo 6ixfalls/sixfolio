@@ -34,7 +34,7 @@ Here are some of the projects that I've completed. Many of my projects have been
     ::card{icon="simple-icons:discord" card-title="Stock Tracker" class-list="bg-indigo-600" href="https://discord.gg/zvT6WhZKs7"}
     A simple stock tracker Discord server (& bot) which automatically pulls and notifies people of new stock, currently for the provider AdvinServers.
     ::
-    ::card{icon="simple-icons:railway" card-title="Railway App Templates" class-list="bg-purple-600" href="https://github.com/stars/6ixfalls/lists/railway-templates"}
+    ::card{icon="simple-icons:railway" card-title="Railway App Templates" class-list="bg-purple-600" href="https://railway.sixfalls.me"}
     A collection of app templates created for the Railway bounty program, including projects such as NocoDB, RabbitMQ, and Temporal.
     ::
     ::card{icon="simple-icons:typescript" card-title="Skilify" class-list="bg-blue-500" href="https://github.com/skilify/skilify"}
